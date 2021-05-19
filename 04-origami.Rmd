@@ -601,10 +601,12 @@ knitr::include_graphics(path = "img/png/rolling_window_v_fold.png")
 
 Before we dive into more details, let's take a moment to review some of the
 basic functionality in `origami` R package. The main function in the `origami`
-is `cross_validate`. To start off, the user must define the fold structure and a function
-that operates on each fold. Once these are passed to `cross_validate`, `cross_validate` 
-will apply the same specified function to each fold, and combine the fold-specific results in a meaningful way. We will see this in action in later sections; for
-now, we provide specific details on each each step of this process below.
+is `cross_validate`. To start off, the user must define the fold structure and a
+function that operates on each fold. Once these are passed to `cross_validate`,
+`cross_validate` will apply the same specified function to each fold, and
+combine the fold-specific results in a meaningful way. We will see this in
+action in later sections; for now, we provide specific details on each each step
+of this process below.
 
 ### (1) Define folds
 

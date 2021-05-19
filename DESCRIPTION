@@ -16,6 +16,8 @@ Imports:
   stringr,
   tidyverse,
   kableExtra,
+  ggfortify,
+  forecast,
   devtools,
   data.table,
   here,
