@@ -1,6 +1,6 @@
 bookdown::bs4_book:
   theme:
-    primary: "#544154"
+    primary: "#006847"
   repo: https://github.com/tlverse/tmlcimx2021-workshop
   includes:
     in_header: html_extras/mathjax_header.html
