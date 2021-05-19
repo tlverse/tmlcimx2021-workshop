@@ -1,7 +1,8 @@
 ---
 knit: "bookdown::render_book"
-title: "[Workshop] Targeted Learning in the `tlverse`"
-subtitle: "Causal Inference Meets Machine Learning"
+title: "Targeted Machine Learning with Big Data in the `tlverse`"
+subtitle: "A Workshop for Programa de Actualización en Salud Pública y
+  Epidemiología of the Instituto Nacional de Salud Públic de México"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
 date: "updated: `r format(Sys.time(), '%B %d, %Y')`"
@@ -16,25 +17,28 @@ colorlinks: yes
 lot: yes
 lof: yes
 always_allow_html: yes
-url: 'https\://tlverse.org/tlverse-workshops/'
-github-repo: tlverse/tlverse-workshops
+url: 'https\://tlverse.org/tmlcimx2021-workshop/'
+github-repo: tlverse/tmlcimx2021-workshop
 graphics: yes
-description: "Open source, reproducible teaching materials accompanying a
-  workshop or short course on Targeted Learning with the [`tlverse` software
-  ecosystem](https://github.com/tlverse)."
+description: "Open source, reproducible teaching materials accompanying an
+  invited short course Targeted Machine Learning for Big Data with the
+  [`tlverse` software ecosystem](https://github.com/tlverse), for Programa de
+  Actualización en Salud Pública y Epidemiología of the Instituto Nacional de
+  Salud Públic de México."
 ---
 
 # Welcome! {-}
 
-This open source, reproducible vignette is for a half-day workshop on the
-Targeted Learning framework for statistical and causal inference with machine
-learning.  Beyond introducing Targeted Learning, the workshop focuses on
-applying the methodology in practice using the [`tlverse` software
-ecosystem](https://github.com/tlverse).  These materials are based on a working
-draft of the book [*Targeted Learning in `R`: Causal Data Science with the
-`tlverse` Software Ecosystem*](https://tlverse.org/tlverse-handbook/), which
-includes in-depth discussion of these topics and much more, and may serve as a
-useful reference to accompany these workshop materials.
+This open source, reproducible vignette is for a four-day invited short course
+on use of the Targeted Learning framework for statistical and causal inference
+with machine learning in modern "Big Data" applications. Beyond introducing
+Targeted Learning, the course focuses on applying the methodology in practice
+using the [`tlverse` software ecosystem](https://github.com/tlverse).  These
+materials are based on a working draft of the book [*Targeted Learning in `R`:
+Causal Data Science with the `tlverse` Software
+Ecosystem*](https://tlverse.org/tlverse-handbook/), which includes in-depth
+discussion of these topics and much more, and may serve as a useful reference to
+accompany these workshop materials.
 
 <img style="float: center; margin-right: 1%; margin-bottom: 0.01em"
      src="img/logos/tlverse-logo.svg" width="30%" height="30%">
@@ -49,7 +53,7 @@ useful reference to accompany these workshop materials.
 
 * __Software installation__: Please install the relevant software before the
   workshop using the [installation
-  script](https://github.com/tlverse/tlverse-workshops/blob/master/install.R).
+  script](https://github.com/tlverse/tmlcimx2021-workshop/blob/master/install.R).
 
 * You will probably exceed the GitHub API rate limit during this installation,
   which will throw an error. This issue and the solution are addressed
@@ -57,14 +61,14 @@ useful reference to accompany these workshop materials.
 
 * __Code__: `R` script files for each section of the workshop are available via
   the GitHub repository for the workshop at
-  https://github.com/tlverse/tlverse-workshops/tree/master/R_code
+  https://github.com/tlverse/tmlcimx2021-workshop/tree/master/R_code
 
-## About this workshop {-}
+## About this short course {-}
 
-This workshop will provide a comprehensive introduction to the field of
-_Targeted Learning_ for causal inference, and the corresponding [`tlverse` software
-ecosystem](https://github.com/tlverse). Emphasis will be placed on targeted
-minimum loss-based estimators of the causal effects of single timepoint
+This short course will provide a comprehensive introduction to the field of
+_Targeted Learning_ for causal inference, and the corresponding [`tlverse`
+software ecosystem](https://github.com/tlverse). Emphasis will be placed on
+targeted minimum loss-based estimators of the causal effects of single timepoint
 interventions, including extensions for missing covariate and outcome data.
 These multiply robust, efficient plug-in estimators use state-of-the-art,
 ensemble machine learning tools to flexibly adjust for confounding while

@@ -1,5 +1,5 @@
-Package: tlverseworkshops
-Title: Targeted Learning Workshops
+Package: tmlcimx2021workshop
+Title: Targeted Machine Learning for Big Data in MX
 Version: 1.0.0
 Depends: R (>= 4.0.0)
 Imports:
@@ -24,9 +24,7 @@ Imports:
   delayed,
   origami (>= 1.0.3),
   sl3 (>= 1.4.3),
-  tmle3 (>= 0.2.0),
-  tmle3mopttx,
-  tmle3shift (>= 0.2.0)
+  tmle3 (>= 0.2.0)
 Suggests:
   nnls,
   Rsolnp,
@@ -45,10 +43,8 @@ Remotes:
   rstudio/bslib,
   rstudio/bookdown,
   tlverse/sl3@devel,
-  tlverse/tmle3@master,
-  tlverse/tmle3mopttx@master,
-  tlverse/tmle3shift@master
+  tlverse/tmle3@master
 URL:
-  https://github.com/tlverse/tlverse-workshops,
-  https://tlverse.org/tlverse-workshops
-BugReports: https://github.com/tlverse/tlverse-workshops/issues
+  https://github.com/tlverse/tmlcimx2021-workshop,
+  https://tlverse.org/tmlcimx2021-workshop
+BugReports: https://github.com/tlverse/tmlcimx2021-workshop/issues
