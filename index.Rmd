@@ -27,7 +27,7 @@ description: "Open source, reproducible teaching materials accompanying an
   Salud Públic de México."
 ---
 
-# Welcome! {-}
+# Information {-}
 
 This open source, reproducible vignette is for a four-day workshop on use of the 
 Targeted Learning framework for statistical and causal inference with machine 
@@ -50,6 +50,7 @@ to accompany these workshop materials.
 <br>
 
 ## Preliminaries {-}
+
 All students in this workshop will work with the software on their machines, and 
 learn how to use these tools in practice. With that in mind, we request all 
 students **complete steps 1 and 2 the week/weekend before the workshop**.
@@ -112,55 +113,53 @@ After completing this workshop, students will be able to:
 
 ### Day 1 (16 August 2021) --- The Roadmap for Targeted Learning {-}
 
-* **Before class**: Please watch the video lecture ["Introduction to Targeted 
-  Learning" (60 
+* **Before class (incomplete):** Please watch the video lecture ["Introduction 
+  to Targeted Learning" (60 
   min)](https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0) 
   by Professors Mark van der Laan and Alan Hubbard.
-* *During class* (this material is not finished): [The Roadmap for Targeted 
+* **During class (incomplete):** [The Roadmap for Targeted 
   Learning](https://tlverse.org/tmlcimx2021-workshop/intro.html) and 
   [Introduction to the 
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
-* After class (this material is not finished): Please fill out the template 
+* **After class (incomplete):** Please fill out the template 
   for the Day 1 exercises (add link). Due to Moodle platform (add link) by 
   midnight on 16 August. 
 * Optional reading: [Why We Need A Statistical 
   Revolution](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/) 
-  and [Handbook Chapter 2: The Roadmap for Targeted 
+  and Targeted Learning Handbook [Chapter 2: The Roadmap for Targeted 
   Learning](https://tlverse.org/tlverse-handbook/intro.html).
+
+### Day 2 (17 August 2021) --- Cross-validation {-}
+
+* **Before class (incomplete):** 
+* **During class (incomplete):** [Cross-validation with 
+`origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
+* **After class (incomplete):** Please fill out the template 
+ for the Day 2 exercises (add link). Due to Moodle platform (add link) by 
+ midnight on 17 August. 
+* Optional reading: Targeted Learning Handbook [Chapter 5: 
+ Cross-validation](https://tlverse.org/tlverse-handbook/origami.html).
 
 ### Day 3 (18 August 2021) --- Super Learning {-}
 
-* **Before class**: Please watch the video lecture (TO-DO)
-* *During class*: [Super (Machine) Learning with 
-`sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
-* After class (this material is not finished): Please fill out the template 
+* **Before class (incomplete):** Please watch the video lecture (TO-DO)
+* **During class (incomplete):** [Super (Machine) Learning with 
+  `sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
+* **After class (incomplete):** Please fill out the template 
   for the Day 3 exercises (add link). Due to Moodle platform (add link) by 
   midnight on 18 August. 
-* Optional reading: [Handbook Chapter 6: Super (Machine)
+* Optional reading: Targeted Learning Handbook [Chapter 6: Super (Machine)
   Learning](https://tlverse.org/tlverse-handbook/sl3.html).
   
-### test {-}
+### Day 4 (19 August 2021) --- Targeted Maximum Likelihood Estimation (TMLE)
 
-* Day 2 (17 August 2021) --- Cross-validation 
-
-  + **Before class:** 
-  + During class (this material is not finished): [Cross-validation with 
-  `origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
-  + After class (this material is not finished): Please fill out the template 
-    for the Day 2 exercises (add link). Due to Moodle platform (add link) by 
-    midnight on 17 August. 
-  + *Optional reading:* [Handbook Chapter 5: 
-    Cross-validation](https://tlverse.org/tlverse-handbook/origami.html).
-    
-* Day 4 (19 August 2021) --- Targeted Maximum Likelihood Estimation (TMLE)
-
-  + **Before class:** 
-  + During class: 
-  + After class: Please fill out the template 
-    for the Day 4 exercises (add link). Due to Moodle platform (add link) by 
-    midnight on 18 August. 
-  + *Optional reading:* [Handbook Chapter 7: The TMLE 
-    Framework](https://tlverse.org/tlverse-handbook/tmle3.html).
+* **Before class (incomplete):** Please watch the video lecture (TO-DO)
+* **During class (incomplete):** 
+* **After class (incomplete):** Please fill out the template 
+  for the Day 4 exercises (add link). Due to Moodle platform (add link) by 
+  midnight on 19 August. 
+* Optional reading: Targeted Learning Handbook [Chapter 7: The TMLE 
+  Framework](https://tlverse.org/tlverse-handbook/tmle3.html).
     
 ## Course resources {-}
 
@@ -180,6 +179,12 @@ After completing this workshop, students will be able to:
 
 * __Course website__: This is the main course website where we will be working 
   during class, and where all course materials, schedule, etc. can be accessed.
+
+* __Targeted Learning Handbook__: These materials are based on a working draft 
+  of the book [*Targeted Learning in `R`: Causal Data Science with the `tlverse` 
+  Software Ecosystem*](https://tlverse.org/tlverse-handbook/), which includes 
+  in-depth discussion of these topics and much more, and will serve as a useful 
+  reference to accompany these workshop materials.
   
 <!--
 __NOTE: All listings are in Pacific Time.__
