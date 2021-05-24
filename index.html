@@ -64,95 +64,172 @@
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="welcome" class="section level1 unnumbered">
 <h1>Welcome!<a class="anchor" aria-label="anchor" href="#welcome"><i class="fas fa-link"></i></a>
 </h1>
-<p>This open source, reproducible vignette is for a four-day invited short course
-on use of the Targeted Learning framework for statistical and causal inference
-with machine learning in modern “Big Data” applications. Beyond introducing
-Targeted Learning, the course focuses on applying the methodology in practice
+<p>This open source, reproducible vignette is for a four-day workshop on use of the
+Targeted Learning framework for statistical and causal inference with machine
+learning in modern “Big Data” applications. Beyond introducing Targeted
+Learning, this course focuses on applying the methodology in practice
 using the <a href="https://github.com/tlverse"><code>tlverse</code> software ecosystem</a>. These
 materials are based on a working draft of the book <a href="https://tlverse.org/tlverse-handbook/"><em>Targeted Learning in <code>R</code>:
 Causal Data Science with the <code>tlverse</code> Software
 Ecosystem</em></a>, which includes in-depth
-discussion of these topics and much more, and may serve as a useful reference to
-accompany these workshop materials.</p>
+discussion of these topics and much more, and will serve as a useful reference
+to accompany these workshop materials.</p>
 <img style="float: center; margin-right: 1%; margin-bottom: 0.01em" src="img/logos/tlverse-logo.svg" width="30%" height="30%"><img style="float: center; margin-right: 1%; margin-bottom: 0.01em" src="img/logos/Rlogo.svg" width="35%" height="35%"><img style="float: center; margin-right: 1%; margin-bottom: 0.01em" src="img/logos/vdl-logo-transparent.svg" width="30%" height="30%"><p style="clear: both;">
 </p>
 <p><br></p>
-<div id="important-links" class="section level2 unnumbered">
-<h2>Important links<a class="anchor" aria-label="anchor" href="#important-links"><i class="fas fa-link"></i></a>
+<div id="preliminaries" class="section level2 unnumbered">
+<h2>Preliminaries<a class="anchor" aria-label="anchor" href="#preliminaries"><i class="fas fa-link"></i></a>
 </h2>
+<p>All students in this workshop will work with the software on their machines, and
+learn how to use these tools in practice. With that in mind, we request all
+students <strong>complete steps 1 and 2 the week/weekend before the workshop</strong>.</p>
+<ol style="list-style-type: decimal">
+<li>Join the Slack page dedicated to this workshop. Here is the invitation link
+to join: (add link).</li>
+<li>Download the necessary software (instructions below). If you are experiencing
+installation issues, please reach out on the Slack “#install” channel at
+least a few days before the workshop.</li>
+</ol>
+<p>Software Download Information:</p>
 <ul>
-<li><p><strong>Software installation</strong>: Please install the relevant software before the
-workshop using the <a href="https://github.com/tlverse/tmlcimx2021-workshop/blob/master/install.R">installation
-script</a>.</p></li>
-<li><p>You will probably exceed the GitHub API rate limit during this installation,
-which will throw an error. This issue and the solution are addressed
-<a href="tlverse.html#installtlverse">here</a>.</p></li>
-<li><p><strong>Code</strong>: <code>R</code> script files for each section of the workshop are available via
-the GitHub repository for the workshop at
-<a href="https://github.com/tlverse/tmlcimx2021-workshop/tree/master/R_code" class="uri">https://github.com/tlverse/tmlcimx2021-workshop/tree/master/R_code</a></p></li>
+<li>Some of the <code>R</code> packages we are working with at the workshop (e.g. glmnet)
+require <code>R</code> version 4.0 or greater. Links to install/update <code>R</code> can be found
+at <a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a>.</li>
+<li>After updating <code>R</code> to version 4.0 or greater, this script should safely cover
+all package installations:
+<a href="https://github.com/tlverse/tmlcimx2021-workshop/blob/master/install.R" class="uri">https://github.com/tlverse/tmlcimx2021-workshop/blob/master/install.R</a>.</li>
+<li>Installation errors will likely occur. The first most common error is the <code>R</code>
+version issue mentioned above, and the second most common error relates to
+exceeding the API rate limit for GitHub packages. The error message and a fix
+for it can be found here:
+<a href="https://tlverse.org/tlverse-handbook/tlverse.html#installtlverse" class="uri">https://tlverse.org/tlverse-handbook/tlverse.html#installtlverse</a>.</li>
 </ul>
+<p>We can help with these installation issues and others on Slack’s #install
+channel.</p>
 </div>
-<div id="about-this-short-course" class="section level2 unnumbered">
-<h2>About this short course<a class="anchor" aria-label="anchor" href="#about-this-short-course"><i class="fas fa-link"></i></a>
+<div id="about-this-workshop" class="section level2 unnumbered">
+<h2>About this workshop<a class="anchor" aria-label="anchor" href="#about-this-workshop"><i class="fas fa-link"></i></a>
 </h2>
-<p>This short course will provide a comprehensive introduction to the field of
-<em>Targeted Learning</em> for causal inference, and the corresponding <a href="https://github.com/tlverse"><code>tlverse</code>
-software ecosystem</a>. Emphasis will be placed on
-targeted minimum loss-based estimators of the causal effects of single timepoint
-interventions, including extensions for missing covariate and outcome data.
-These multiply robust, efficient plug-in estimators use state-of-the-art,
-ensemble machine learning tools to flexibly adjust for confounding while
-yielding valid statistical inference. In particular, we will discuss targeted
-estimators of the causal effects of static and dynamic interventions; time
-permitting, additional topics to be discussed will include estimation of the
-causal effects of optimal dynamic and stochastic interventions.</p>
-<p>In addition to discussion, this workshop will incorporate both interactive
-activities and hands-on, guided <code>R</code> programming exercises, to allow participants
-the opportunity to familiarize themselves with methodology and tools that will
-translate to real-world data analysis. It is highly recommended for participants
-to have an understanding of basic statistical concepts such as confounding,
-probability distributions, confidence intervals, hypothesis testing, and
-regression. Advanced knowledge of mathematical statistics is useful but not
-necessary. Familiarity with the <code>R</code> programming language will be essential.</p>
+<p>This workshop will provide a comprehensive introduction to the field of
+Targeted Learning for causal inference, and the corresponding <a href="https://github.com/tlverse">“tlverse”
+software ecosystem</a>. Targeted Learning is a general
+statistical approach which unifies advances in causal inference, statistical
+theory, and machine learning into a cohesive framework to guide pre-specified
+statistical analysis plans. Emphasis will be placed on efficient targeted
+estimators of causal effects of a variety of interventions (personalized,
+treatment versus control, shifting exposures).</p>
+<p>In addition to discussion, this workshop will incorporate interactive
+activities and programming exercises in the <code>R</code> language with public health
+data. After this course, students will be able to use these free tools to
+answer scientifically meaningful questions in public health, medicine,
+economics, and more.</p>
+<p>After completing this workshop, students will be able to:</p>
+<ol style="list-style-type: decimal">
+<li>Follow the roadmap of targeted learning to translate meaningful research
+questions into realistic statistical estimation problems, and obtain valid
+inference in terms of confidence intervals and p-values.</li>
+<li>Reliably assess the performance of a machine learning algorithm, or compare
+the performance of several algorithms by applying cross-validation schemes
+using the <code>origami</code> <code>R</code> package.</li>
+<li>Ensemble a combination of algorithms into an improved super learner
+algorithm using the <code>sl3</code> <code>R</code> package, and explain why this combination is
+better than selecting a single algorithm to colleagues.</li>
+<li>Estimate the (potentially causal) effect of an intervention on a population
+using the <code>tmle3</code> <code>R</code> package.</li>
+</ol>
 </div>
-<div id="outline" class="section level2 unnumbered">
-<h2>Outline<a class="anchor" aria-label="anchor" href="#outline"><i class="fas fa-link"></i></a>
+<div id="schedule" class="section level2 unnumbered">
+<h2>Schedule<a class="anchor" aria-label="anchor" href="#schedule"><i class="fas fa-link"></i></a>
 </h2>
+<div id="day-1-16-august-2021-the-roadmap-for-targeted-learning" class="section level3 unnumbered">
+<h3>Day 1 (16 August 2021) — The Roadmap for Targeted Learning<a class="anchor" aria-label="anchor" href="#day-1-16-august-2021-the-roadmap-for-targeted-learning"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>
-<em>Warm-up</em>: The Roadmap of Targeted Learning and <a href="https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/">Why We Need A Statistical
+<strong>Before class</strong>: Please watch the video lecture <a href="https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0">“Introduction to Targeted
+Learning” (60
+min)</a>
+by Professors Mark van der Laan and Alan Hubbard.</li>
+<li>
+<em>During class</em> (this material is not finished): <a href="https://tlverse.org/tmlcimx2021-workshop/intro.html">The Roadmap for Targeted
+Learning</a> and
+<a href="https://tlverse.org/tmlcimx2021-workshop/tlverse.html">Introduction to the
+<code>tlverse</code></a>.</li>
+<li>After class (this material is not finished): Please fill out the template
+for the Day 1 exercises (add link). Due to Moodle platform (add link) by
+midnight on 16 August.</li>
+<li>Optional reading: <a href="https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/">Why We Need A Statistical
 Revolution</a>
-with an <em><a href="https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0">introductory video lecture by Mark van der Laan and Alan
-Hubbard</a></em>
-(<strong>Please watch this hour-long lecture before the workshop.</strong>)</li>
-<li>09:00-09:30A: <a href="https://tlverse.org">Introduction to the <code>tlverse</code> Software
-Ecosystem</a> and the <a href="http://www.washbenefits.net/">WASH Benefits
-data</a>
+and <a href="https://tlverse.org/tlverse-handbook/intro.html">Handbook Chapter 2: The Roadmap for Targeted
+Learning</a>.</li>
+</ul>
+</div>
+<div id="day-3-18-august-2021-super-learning" class="section level3 unnumbered">
+<h3>Day 3 (18 August 2021) — Super Learning<a class="anchor" aria-label="anchor" href="#day-3-18-august-2021-super-learning"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<strong>Before class</strong>: Please watch the video lecture (TO-DO)</li>
+<li>
+<em>During class</em>: <a href="https://tlverse.org/tmlcimx2021-workshop/sl3.html">Super (Machine) Learning with
+<code>sl3</code></a> and</li>
+<li>After class (this material is not finished): Please fill out the template
+for the Day 3 exercises (add link). Due to Moodle platform (add link) by
+midnight on 18 August.</li>
+<li>Optional reading: <a href="https://tlverse.org/tlverse-handbook/sl3.html">Handbook Chapter 6: Super (Machine)
+Learning</a>.</li>
+</ul>
+</div>
+<div id="test" class="section level3 unnumbered">
+<h3>test<a class="anchor" aria-label="anchor" href="#test"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<p>Day 2 (17 August 2021) — Cross-validation</p>
+<ul>
+<li><strong>Before class:</strong></li>
+<li>During class (this material is not finished): <a href="https://tlverse.org/tmlcimx2021-workshop/origami.html">Cross-validation with
+<code>origami</code></a>.</li>
+<li>After class (this material is not finished): Please fill out the template
+for the Day 2 exercises (add link). Due to Moodle platform (add link) by
+midnight on 17 August.</li>
+<li>
+<em>Optional reading:</em> <a href="https://tlverse.org/tlverse-handbook/origami.html">Handbook Chapter 5:
+Cross-validation</a>.</li>
+</ul>
 </li>
-<li>09:30-10:00A: Super learning with the <a href="https://github.com/tlverse/sl3"><code>sl3</code> <code>R</code>
-package</a>
+<li>
+<p>Day 4 (19 August 2021) — Targeted Maximum Likelihood Estimation (TMLE)</p>
+<ul>
+<li><strong>Before class:</strong></li>
+<li>During class:</li>
+<li>After class: Please fill out the template
+for the Day 4 exercises (add link). Due to Moodle platform (add link) by
+midnight on 18 August.</li>
+<li>
+<em>Optional reading:</em> <a href="https://tlverse.org/tlverse-handbook/tmle3.html">Handbook Chapter 7: The TMLE
+Framework</a>.</li>
+</ul>
 </li>
-<li>10:00-11:00A: Programming exercises with <code>sl3</code>
-</li>
-<li>11:00-11:15A: Morning Coffee Break and Q&amp;A</li>
-<li>11:15-12:00P: Targeted Learning for causal inference with the <a href="https://github.com/tlverse/tmle3"><code>tmle3</code> <code>R</code>
-package</a>
-</li>
-<li>12:00-12:45P: Programming exercises with <code>tmle3</code>
-</li>
-<li>12:45-01:30P: Lunch Break</li>
-<li>01:30-02:15P: Optimal treatment regimes with the <a href="https://github.com/tlverse/tmle3mopttx"><code>tmle3mopttx</code> <code>R</code>
-package</a>
-</li>
-<li>02:15-03:00P: Programming exercises with <code>tmle3mopttx</code>
-</li>
-<li>03:00-03:15P: Afternoon Coffee Break</li>
-<li>03:15-04:00P: Stochastic treatment regimes with the <a href="https://github.com/tlverse/tmle3shift"><code>tmle3shift</code> <code>R</code>
-package</a>
-</li>
-<li>04:00-04:30P: Programming exercises with <code>tmle3shift</code>
-</li>
-<li>04:30-05:00P: Concluding remarks and discussion</li>
+</ul>
+</div>
+</div>
+<div id="course-resources" class="section level2 unnumbered">
+<h2>Course resources<a class="anchor" aria-label="anchor" href="#course-resources"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>Slack</strong>:</p></li>
+<li><p><strong>Moodle</strong>: Exercises will be due to the Moodle platform (add link)
+on each of the four days by midnight.</p></li>
+<li><p><strong>Exercise answer templates</strong>: The templates to fill out exercise
+answers that are due to the Moodle platform are available on Moodle and on
+the GitHub repository for this workshop at
+<a href="https://github.com/tlverse/tmlcimx2021-workshop/tree/master/exercises" class="uri">https://github.com/tlverse/tmlcimx2021-workshop/tree/master/exercises</a>.</p></li>
+<li><p><strong>Code</strong>: <code>R</code> scripts for each section of the workshop are available via the
+GitHub repository for the workshop at
+<a href="https://github.com/tlverse/tmlcimx2021-workshop/tree/master/R_code" class="uri">https://github.com/tlverse/tmlcimx2021-workshop/tree/master/R_code</a>.</p></li>
+<li><p><strong>Course website</strong>: This is the main course website where we will be working
+during class, and where all course materials, schedule, etc. can be accessed.</p></li>
 </ul>
 <!--
 __NOTE: All listings are in Pacific Time.__
@@ -236,9 +313,12 @@ network) and adaptive sequential designs.</p>
 </h3>
 <p>Rachael Phillips is a PhD student in biostatistics, advised by Alan Hubbard and
 Mark van der Laan. She has an MA in Biostatistics, BS in Biology, and BA in
-Mathematics. A student of targeted learning and causal inference; her research
-integrates personalized medicine, human-computer interaction, experimental
-design, and regulatory policy.</p>
+Mathematics. A student of targeted learning and causal inference, Rachael’s
+research integrates semiparametric statistical estimation and inference. She is
+motivated by applied projects and some of her current work involves personalized
+online learning from data streams of vital signs, human-computer interaction,
+automated machine learning, and developing statistical analysis plans using
+targeted learning.</p>
 </div>
 </div>
 <div id="repro" class="section level2">
@@ -264,8 +344,8 @@ following packages:</p>
 <tbody>
 <tr class="odd">
 <td align="left">bookdown</td>
-<td align="left">0.22.2</td>
-<td align="left">Github (rstudio/bookdown@92de8a4)</td>
+<td align="left">0.22.3</td>
+<td align="left">Github (rstudio/bookdown@aa75b5f)</td>
 </tr>
 <tr class="even">
 <td align="left">bslib</td>
@@ -513,9 +593,16 @@ Data</a>.</p>
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#welcome">Welcome!</a></li>
-<li><a class="nav-link" href="#important-links">Important links</a></li>
-<li><a class="nav-link" href="#about-this-short-course">About this short course</a></li>
-<li><a class="nav-link" href="#outline">Outline</a></li>
+<li><a class="nav-link" href="#preliminaries">Preliminaries</a></li>
+<li><a class="nav-link" href="#about-this-workshop">About this workshop</a></li>
+<li>
+<a class="nav-link" href="#schedule">Schedule</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#day-1-16-august-2021-the-roadmap-for-targeted-learning">Day 1 (16 August 2021) — The Roadmap for Targeted Learning</a></li>
+<li><a class="nav-link" href="#day-3-18-august-2021-super-learning">Day 3 (18 August 2021) — Super Learning</a></li>
+<li><a class="nav-link" href="#test">test</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#course-resources">Course resources</a></li>
 <li>
 <a class="nav-link" href="#about-the-instructors">About the instructors</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#mark-van-der-laan">Mark van der Laan</a></li>
@@ -547,7 +634,7 @@ Data</a>.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Workshop for Programa de Actualización en Salud Pública y Epidemiología of the Instituto Nacional de Salud Públic de México" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: May 19, 2021.</p>
+    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Workshop for Programa de Actualización en Salud Pública y Epidemiología of the Instituto Nacional de Salud Públic de México" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: May 24, 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
