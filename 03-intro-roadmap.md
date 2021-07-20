@@ -457,3 +457,34 @@ with a small visualization describing the marginal characteristics of each
 covariate. Note that the *asset* variables reflect socio-economic status of the
 study participants. Notice also the uniform distribution of the treatment groups
 (with twice as many controls); this is, of course, by design.
+
+## Exercises
+
+1. Introduction
+    
+    a. Why did you enroll in this course?
+    b. Have you had educational and/or work experiences related to the topics 
+       covered in this course, including causal inference, data analysis, 
+       statistics, machine learning?
+
+2. What is the objective of the roadmap?
+3. Specifying a statistical estimation problem consists of what three steps?
+4. Provide a definition and an example for each of the following:
+
+    a. Statistical model 
+    b. Target estimand
+    c. Estimator
+    
+7. Provide examples of data under the following scenarios:
+
+    a. The observations are not independent, but are identically distributed.
+    b. The observations are neither independent nor identically distributed. 
+
+8. Traditional data analysis concerns  
+ 
+    a. Common data science practice encourages users to "check" models after 
+       they have been fit to the data so that if one of the checks fail, then a 
+       new model can be fit to the data. Why can this approach be problematic?
+    b. Common data science practice lets the type of data at hand dictate the 
+       scientific question of interest and the statistical model. Why is this 
+       problematic?

@@ -1,11 +1,11 @@
 ---
 knit: "bookdown::render_book"
 title: "Targeted Machine Learning with Big Data in the `tlverse`"
-subtitle: "A Workshop for Programa de Actualización en Salud Pública y
-  Epidemiología of the Instituto Nacional de Salud Públic de México"
+subtitle: "A Workshop for the Public Health and Epidemiology Program (PASPE) at
+the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: May 24, 2021"
+date: "updated: July 19, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -111,67 +111,59 @@ After completing this workshop, students will be able to:
    
 ## Schedule {-}
 
-### Day 1 (16 August 2021) --- The Roadmap for Targeted Learning {-}
+### Monday, 16 August 2021 --- The Roadmap {-}
 
-* **Before class (incomplete):** Please watch the video lecture ["Introduction 
-  to Targeted Learning" (60 
-  min)](https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0) 
-  by Professors Mark van der Laan and Alan Hubbard.
-* **During class (incomplete):** [The Roadmap for Targeted 
+* **Before class:** Please read the article ["Why We Need A Statistical 
+  Revolution"](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/) 
+  and watch the video lecture by Professors Mark van der Laan and Alan Hubbard 
+  ["Introduction to Targeted Learning" (60 
+  min)](https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0).
+* **During class:** [The Roadmap for Targeted 
   Learning](https://tlverse.org/tmlcimx2021-workshop/intro.html) and 
   [Introduction to the 
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
-* **After class (incomplete):** Please fill out the template 
-  for the Day 1 exercises (add link). Due to Moodle platform (add link) by 
-  midnight on 16 August. 
-* Optional reading: [Why We Need A Statistical 
-  Revolution](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/) 
-  and Targeted Learning Handbook [Chapter 2: The Roadmap for Targeted 
-  Learning](https://tlverse.org/tlverse-handbook/intro.html).
+* **After class:** Please complete the [Roadmap Chapter 
+  Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) and 
+  submit to the Moodle platform by midnight on 16 August. 
 
-### Day 2 (17 August 2021) --- Cross-validation {-}
+### Tuesday, 17 August 2021 --- Cross-validation {-}
 
-* **Before class (incomplete):** 
-* **During class (incomplete):** [Cross-validation with 
-`origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
-* **After class (incomplete):** Please fill out the template 
- for the Day 2 exercises (add link). Due to Moodle platform (add link) by 
- midnight on 17 August. 
-* Optional reading: Targeted Learning Handbook [Chapter 5: 
- Cross-validation](https://tlverse.org/tlverse-handbook/origami.html).
+* **Before class:** Please read ["Chapter 5: 
+  Cross-validation" of the 
+  *Targeted Learning Handbook*](https://tlverse.org/tlverse-handbook/origami.html).
+* **During class:** [Cross-validation with 
+  `origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
+* **After class:** Please complete the [Cross-validation 
+  Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises) 
+  and submit to the Moodle platform by midnight on 17 August. 
 
-### Day 3 (18 August 2021) --- Super Learning {-}
+### Wednesday, 18 August 2021 --- Super Learning {-}
 
-* **Before class (incomplete):** Please watch the video lecture (TO-DO)
-* **During class (incomplete):** [Super (Machine) Learning with 
+* **Before class:** Please read ["Chapter 6: Super (Machine)
+  Learning" of the 
+  *Targeted Learning Handbook*](https://tlverse.org/tlverse-handbook/sl3.html).
+* **During class:** [Super (Machine) Learning with 
   `sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
-* **After class (incomplete):** Please fill out the template 
-  for the Day 3 exercises (add link). Due to Moodle platform (add link) by 
-  midnight on 18 August. 
-* Optional reading: Targeted Learning Handbook [Chapter 6: Super (Machine)
-  Learning](https://tlverse.org/tlverse-handbook/sl3.html).
+* **After class:** Please complete the [Super Learning 
+  Exercises](https://tlverse.org/tmlcimx2021-workshop/sl3.html#sl3-exercises) 
+  and submit to the Moodle platform by midnight on 18 August. 
   
-### Day 4 (19 August 2021) --- Targeted Maximum Likelihood Estimation (TMLE)
+### Thursday, 19 August 2021 --- Targeted Maximum Likelihood Estimation (TMLE)
 
-* **Before class (incomplete):** Please watch the video lecture (TO-DO)
-* **During class (incomplete):** 
-* **After class (incomplete):** Please fill out the template 
-  for the Day 4 exercises (add link). Due to Moodle platform (add link) by 
-  midnight on 19 August. 
-* Optional reading: Targeted Learning Handbook [Chapter 7: The TMLE 
-  Framework](https://tlverse.org/tlverse-handbook/tmle3.html).
+* **Before class:** Please read ["Chapter 7: The TMLE Framework" of the 
+  *Targeted Learning Handbook*](https://tlverse.org/tlverse-handbook/sl3.html).
+* **During class:** [The TMLE 
+  Framework](https://tlverse.org/tmlcimx2021-workshop/tmle3.html)
+* **After class:** Please complete the [TMLE 
+  Exercises](https://tlverse.org/tmlcimx2021-workshop/tmle3.html#exercises-1) 
+  and submit to the Moodle platform by midnight on 19 August. 
     
 ## Course resources {-}
 
 * __Slack__: 
 
-* __Moodle__: Exercises will be due to the Moodle platform (add link)
-  on each of the four days by midnight. 
-  
-* __Exercise answer templates__: The templates to fill out exercise 
-  answers that are due to the Moodle platform are available on Moodle and on 
-  the GitHub repository for this workshop at 
-  https://github.com/tlverse/tmlcimx2021-workshop/tree/master/exercises.
+* __Moodle__: Exercises will be due to the Moodle platform on each of the four 
+  days by midnight. 
 
 * __Code__: `R` scripts for each section of the workshop are available via the 
   GitHub repository for the workshop at
@@ -285,25 +277,25 @@ following packages:
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.3     |Github (rstudio/bookdown\@aa75b5f) |
-|bslib      |0.2.5.9000 |Github (rstudio/bslib\@9e60ac1)    |
+|bookdown   |0.22.12    |Github (rstudio/bookdown\@0de8f11) |
+|bslib      |0.2.5.9002 |Github (rstudio/bslib\@b86fc24)    |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |
 |delayed    |0.3.0      |CRAN (R 4.1.0)                     |
-|devtools   |2.4.1      |CRAN (R 4.1.0)                     |
+|devtools   |2.4.2      |CRAN (R 4.1.0)                     |
 |downlit    |0.2.1      |CRAN (R 4.1.0)                     |
-|dplyr      |1.0.6      |CRAN (R 4.1.0)                     |
-|forecast   |8.14       |CRAN (R 4.1.0)                     |
-|ggfortify  |0.4.11     |CRAN (R 4.1.0)                     |
-|ggplot2    |3.3.3      |CRAN (R 4.1.0)                     |
+|dplyr      |1.0.7      |CRAN (R 4.1.0)                     |
+|forecast   |8.15       |CRAN (R 4.1.0)                     |
+|ggfortify  |0.4.12     |CRAN (R 4.1.0)                     |
+|ggplot2    |3.3.5      |CRAN (R 4.1.0)                     |
 |here       |1.0.1      |CRAN (R 4.1.0)                     |
 |kableExtra |1.3.4      |CRAN (R 4.1.0)                     |
 |knitr      |1.33       |CRAN (R 4.1.0)                     |
-|mvtnorm    |1.1-1      |CRAN (R 4.1.0)                     |
+|mvtnorm    |1.1-2      |CRAN (R 4.1.0)                     |
 |origami    |1.0.3      |CRAN (R 4.1.0)                     |
 |readr      |1.4.0      |CRAN (R 4.1.0)                     |
-|rmarkdown  |2.8        |CRAN (R 4.1.0)                     |
+|rmarkdown  |2.9        |CRAN (R 4.1.0)                     |
 |skimr      |2.1.3      |CRAN (R 4.1.0)                     |
-|sl3        |1.4.3      |Github (tlverse/sl3\@6db1814)      |
+|sl3        |1.4.3      |Github (tlverse/sl3\@aeeb7e9)      |
 |stringr    |1.4.0      |CRAN (R 4.1.0)                     |
 |tibble     |3.1.2      |CRAN (R 4.1.0)                     |
 |tidyr      |1.1.3      |CRAN (R 4.1.0)                     |

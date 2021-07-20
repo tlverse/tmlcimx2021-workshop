@@ -4,13 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Cross-validation | Targeted Machine Learning with Big Data in the tlverse</title>
-<meta name="author" content="Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Cross-validation | tmlcimx2021-workshop</title>
+<meta name="generator" content="bookdown 0.22.12 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Cross-validation | tmlcimx2021-workshop">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Cross-validation | tmlcimx2021-workshop">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9000/tabs.js"></script><script src="libs/bs3compat-0.2.5.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9002/transition.js"></script><script src="libs/bs3compat-0.2.5.9002/tabs.js"></script><script src="libs/bs3compat-0.2.5.9002/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
 <script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<meta name="description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-07-19 Learning Objectives By the end of this chapter you will be able...">
+<meta property="og:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-07-19 Learning Objectives By the end of this chapter you will be able...">
+<meta name="twitter:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-07-19 Learning Objectives By the end of this chapter you will be able...">
 </head>
 <body>
 <span class="math inline">
@@ -26,14 +33,13 @@
   \(\newcommand{\I}{\mathbb{I}}\)
   \(\newcommand{\1}{\mathbbm{1}}\)
   </span>
-    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><div class="container-fluid">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><div class="container-fluid">
 <div class="row">
   <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="A Workshop for Programa de Actualización en Salud Pública y Epidemiología of the Instituto Nacional de Salud Públic de México">Targeted Machine Learning with Big Data in the <code>tlverse</code></a>:
-        <small class="text-muted">A Workshop for Programa de Actualización en Salud Pública y Epidemiología of the Instituto Nacional de Salud Públic de México</small>
+        <a href="index.html" title=""></a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -68,7 +74,7 @@
 <p><em>Ivana Malenica</em></p>
 <p>Based on the <a href="https://github.com/tlverse/origami"><code>origami</code> <code>R</code> package</a>
 by <em>Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips</em>.</p>
-<p>Updated: 2021-05-24</p>
+<p>Updated: 2021-07-19</p>
 <div id="learning-objectives-2" class="section level2 unnumbered">
 <h2>Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives-2"><i class="fas fa-link"></i></a>
 </h2>
@@ -163,8 +169,8 @@ selection, cross-validation has powerful optimality properties. The asymptotic
 optimality results state that the cross-validated selector performs (in terms of
 risk) asymptotically as well as an optimal oracle selector based on the true,
 unknown data generating distribution. For further details on the theoretical
-results, we suggest <span class="citation">van der Laan and Dudoit (<a href="references.html#ref-vdl2003unified" role="doc-biblioref">2003</a>)</span>, <span class="citation">van der Laan, Dudoit, and Keles (<a href="references.html#ref-vdl2004asymptotic" role="doc-biblioref">2004</a>)</span>, <span class="citation">Dudoit and van der Laan (<a href="references.html#ref-dudoit2005asymptotics" role="doc-biblioref">2005</a>)</span> and
-<span class="citation">Van der Vaart, Dudoit, and Laan (<a href="references.html#ref-vaart2006oracle" role="doc-biblioref">2006</a>)</span>.</p>
+results, we suggest <span class="citation">(<span class="citeproc-not-found" data-reference-id="vdl2003unified"><strong>???</strong></span>)</span>, <span class="citation">(<span class="citeproc-not-found" data-reference-id="vdl2004asymptotic"><strong>???</strong></span>)</span>, <span class="citation">(<span class="citeproc-not-found" data-reference-id="dudoit2005asymptotics"><strong>???</strong></span>)</span> and
+<span class="citation">(<span class="citeproc-not-found" data-reference-id="vaart2006oracle"><strong>???</strong></span>)</span>.</p>
 <p>In great generality, cross-validation works by partitioning a sample into
 complementary subsets, applying a particular algorithm(s) on a subset (the
 training set), and evaluating the method of choice on the complementary subset
@@ -187,8 +193,8 @@ package, and show their use in applied settings.</p>
 can define the <strong>Estimation Roadmap</strong> to guide the estimation process. In
 particular, we have developed a unified loss-based cross-validation methodology
 for estimator construction, selection, and performance assessment in a series of
-articles (e.g., see <span class="citation">van der Laan and Dudoit (<a href="references.html#ref-vdl2003unified" role="doc-biblioref">2003</a>)</span>, <span class="citation">van der Laan, Dudoit, and Keles (<a href="references.html#ref-vdl2004asymptotic" role="doc-biblioref">2004</a>)</span>, <span class="citation">Dudoit and van der Laan (<a href="references.html#ref-dudoit2005asymptotics" role="doc-biblioref">2005</a>)</span>,
-<span class="citation">Van der Vaart, Dudoit, and Laan (<a href="references.html#ref-vaart2006oracle" role="doc-biblioref">2006</a>)</span>, and <span class="citation">van der Laan, Polley, and Hubbard (<a href="references.html#ref-vdl2007super" role="doc-biblioref">2007</a>)</span>) that follow three main steps:</p>
+articles (e.g., see <span class="citation">(<span class="citeproc-not-found" data-reference-id="vdl2003unified"><strong>???</strong></span>)</span>, <span class="citation">(<span class="citeproc-not-found" data-reference-id="vdl2004asymptotic"><strong>???</strong></span>)</span>, <span class="citation">(<span class="citeproc-not-found" data-reference-id="dudoit2005asymptotics"><strong>???</strong></span>)</span>,
+<span class="citation">(<span class="citeproc-not-found" data-reference-id="vaart2006oracle"><strong>???</strong></span>)</span>, and <span class="citation">(<span class="citeproc-not-found" data-reference-id="vdl2007super"><strong>???</strong></span>)</span>) that follow three main steps:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>The loss funtion</strong>:
 Define the target parameter as the minimizer of the expected loss (risk) for a
@@ -2461,9 +2467,9 @@ folds to train! Luckily, we can pass the <code>batch</code> as option to
 <p>The arima model with no AR component seems to be a better fit for this data.</p>
 </div>
 </div>
-<div id="exercises" class="section level2">
+<div id="exercises-1" class="section level2">
 <h2>
-<span class="header-section-number">3.8</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.8</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"><i class="fas fa-link"></i></a>
 </h2>
 <div id="review-of-key-concepts" class="section level3">
 <h3>
@@ -2567,7 +2573,7 @@ of the proposed algorithm.</li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#exercises"><span class="header-section-number">3.8</span> Exercises</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#exercises-1"><span class="header-section-number">3.8</span> Exercises</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#review-of-key-concepts"><span class="header-section-number">3.8.1</span> Review of Key Concepts</a></li>
 <li><a class="nav-link" href="#the-ideas-in-action"><span class="header-section-number">3.8.2</span> The Ideas in Action</a></li>
 <li><a class="nav-link" href="#advanced-topics"><span class="header-section-number">3.8.3</span> Advanced Topics</a></li>
@@ -2590,7 +2596,7 @@ of the proposed algorithm.</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Workshop for Programa de Actualización en Salud Pública y Epidemiología of the Instituto Nacional de Salud Públic de México" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: May 24, 2021.</p>
+    <p>"<strong></strong>" was written by . </p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -2610,6 +2616,22 @@ of the proposed algorithm.</li>
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
 </html>

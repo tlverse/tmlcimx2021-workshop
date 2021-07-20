@@ -2,7 +2,7 @@ fig:unnamed-chunk-1
 fig:unnamed-chunk-2
 fig:unnamed-chunk-3
 fig:unnamed-chunk-4
-day-4-19-august-2021-targeted-maximum-likelihood-estimation-tmle
+thursday-19-august-2021-targeted-maximum-likelihood-estimation-tmle
 repro
 setup
 r-and-rstudio
@@ -27,6 +27,7 @@ causal
 the-causal-model
 identifiability
 the-wash-benefits-example-dataset
+exercises
 origami
 introduction-1
 background
@@ -54,7 +55,7 @@ cross-validation-in-action
 cross-validation-with-linear-regression
 cross-validation-with-random-forests
 cross-validation-with-arima
-exercises
+exercises-1
 review-of-key-concepts
 the-ideas-in-action
 advanced-topics
@@ -92,7 +93,7 @@ putting-it-all-together
 fitting-tmle3-with-multiple-parameters
 delta-method
 fit
-exercises-1
+exercises-2
 tmle3-ex1
 tmle3-ex2
 summary
