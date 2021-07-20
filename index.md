@@ -5,7 +5,7 @@ subtitle: "A Workshop for the Public Health and Epidemiology Program (PASPE) at
 the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: July 19, 2021"
+date: "updated: July 20, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -111,7 +111,7 @@ After completing this workshop, students will be able to:
    
 ## Schedule {-}
 
-### Monday, 16 August 2021 --- The Roadmap {-}
+### 16 August 2021 --- The Roadmap {-}
 
 * **Before class:** Please read the article ["Why We Need A Statistical 
   Revolution"](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/) 
@@ -126,7 +126,7 @@ After completing this workshop, students will be able to:
   Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) and 
   submit to the Moodle platform by midnight on 16 August. 
 
-### Tuesday, 17 August 2021 --- Cross-validation {-}
+### 17 August 2021 --- Cross-validation {-}
 
 * **Before class:** Please read ["Chapter 5: 
   Cross-validation" of the 
@@ -137,7 +137,7 @@ After completing this workshop, students will be able to:
   Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises) 
   and submit to the Moodle platform by midnight on 17 August. 
 
-### Wednesday, 18 August 2021 --- Super Learning {-}
+### 18 August 2021 --- Super Learning {-}
 
 * **Before class:** Please read ["Chapter 6: Super (Machine)
   Learning" of the 
@@ -148,7 +148,7 @@ After completing this workshop, students will be able to:
   Exercises](https://tlverse.org/tmlcimx2021-workshop/sl3.html#sl3-exercises) 
   and submit to the Moodle platform by midnight on 18 August. 
   
-### Thursday, 19 August 2021 --- Targeted Maximum Likelihood Estimation (TMLE)
+### 19 August 2021 --- Targeted Maximum Likelihood Estimation (TMLE) {-}
 
 * **Before class:** Please read ["Chapter 7: The TMLE Framework" of the 
   *Targeted Learning Handbook*](https://tlverse.org/tlverse-handbook/sl3.html).
