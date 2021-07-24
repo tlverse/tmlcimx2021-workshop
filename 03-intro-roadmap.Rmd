@@ -3,14 +3,9 @@
 ## Learning Objectives
 
 By the end of this chapter you will be able to:
-
-1. Translate scientific questions to statistical questions.
-2. Define a statistical model based on the knowledge of the experiment that
-   generated the data.
-3. Identify a causal parameter as a function of the observed data distribution.
-4. Explain the following causal and statistical assumptions and their
-   implications: i.i.d., consistency, interference, positivity, SUTVA.
-
+- Follow the roadmap of targeted learning to translate meaningful research 
+  questions into realistic statistical estimation problems, and obtain valid 
+  inference in terms of confidence intervals and p-values.
 ## Introduction
 
 The roadmap of statistical learning is concerned with the translation from
@@ -21,7 +16,7 @@ model, a statistical target parameter representing an answer to the question of
 interest, and the notion of an estimator and sampling distribution of the
 estimator.
 
-## The Roadmap
+## The Roadmap {#intro-roadmap}
 
 Following the roadmap is a process of five stages.
 
@@ -393,7 +388,7 @@ covariate. Note that the *asset* variables reflect socio-economic status of the
 study participants. Notice also the uniform distribution of the treatment groups
 (with twice as many controls); this is, of course, by design.
 
-## Exercises
+## Exercises {#roadmap-exercises}
 
 1. Introduction
     
@@ -423,3 +418,7 @@ study participants. Notice also the uniform distribution of the treatment groups
     b. Common data science practice lets the type of data at hand dictate the 
        scientific question of interest and the statistical model. Why is this 
        problematic?
+
+### Exercise Solutions {-}
+After all exercises are submitted, the solutions will be made available here:
+[Roadmap Exercise Solutions](#solutions-roadmap).
