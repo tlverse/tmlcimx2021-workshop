@@ -124,7 +124,7 @@ After completing this workshop, students will be able to:
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
 * **After class:** Please complete the [Roadmap Chapter 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) and 
-  submit to the Moodle platform by midnight on 16 August. 
+  email to rachaelvphillips@berkeley.edu by midnight on 16 August. 
 
 ### 17 August 2021 --- Cross-validation {-}
 
@@ -135,7 +135,7 @@ After completing this workshop, students will be able to:
   `origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
 * **After class:** Please complete the [Cross-validation 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises) 
-  and submit to the Moodle platform by midnight on 17 August. 
+  and email to rachaelvphillips@berkeley.edu by midnight on 17 August. 
 
 ### 18 August 2021 --- Super Learning {-}
 
@@ -146,7 +146,7 @@ After completing this workshop, students will be able to:
   `sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
 * **After class:** Please complete the [Super Learning 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/sl3.html#sl3-exercises) 
-  and submit to the Moodle platform by midnight on 18 August. 
+  and email to rachaelvphillips@berkeley.edu by midnight on 18 August. 
   
 ### 19 August 2021 --- Targeted Maximum Likelihood Estimation (TMLE) {-}
 
@@ -156,14 +156,11 @@ After completing this workshop, students will be able to:
   Framework](https://tlverse.org/tmlcimx2021-workshop/tmle3.html)
 * **After class:** Please complete the [TMLE 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/tmle3.html#exercises-1) 
-  and submit to the Moodle platform by midnight on 19 August. 
+  and email to rachaelvphillips@berkeley.edu by midnight on 19 August. 
     
 ## Course resources {-}
 
 * __Slack__: 
-
-* __Moodle__: Exercises will be due to the Moodle platform on each of the four 
-  days by midnight. 
 
 * __Code__: `R` scripts for each section of the workshop are available via the 
   GitHub repository for the workshop at
