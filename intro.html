@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 The Roadmap for Targeted Learning | tmlcimx2021-workshop</title>
-<meta name="generator" content="bookdown 0.22.12 with bs4_book()">
+<meta name="generator" content="bookdown 0.22.15 with bs4_book()">
 <meta property="og:title" content="Chapter 2 The Roadmap for Targeted Learning | tmlcimx2021-workshop">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -15,9 +15,9 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9002/transition.js"></script><script src="libs/bs3compat-0.2.5.9002/tabs.js"></script><script src="libs/bs3compat-0.2.5.9002/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
 <script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<meta name="description" content="2.1 Learning Objectives By the end of this chapter you will be able to: Translate scientific questions to statistical questions. Define a statistical model based on the knowledge of the experiment...">
-<meta property="og:description" content="2.1 Learning Objectives By the end of this chapter you will be able to: Translate scientific questions to statistical questions. Define a statistical model based on the knowledge of the experiment...">
-<meta name="twitter:description" content="2.1 Learning Objectives By the end of this chapter you will be able to: Translate scientific questions to statistical questions. Define a statistical model based on the knowledge of the experiment...">
+<meta name="description" content="2.1 Learning Objectives By the end of this chapter you will be able to: Follow the roadmap of targeted learning to translate meaningful research questions into realistic statistical estimation...">
+<meta property="og:description" content="2.1 Learning Objectives By the end of this chapter you will be able to: Follow the roadmap of targeted learning to translate meaningful research questions into realistic statistical estimation...">
+<meta name="twitter:description" content="2.1 Learning Objectives By the end of this chapter you will be able to: Follow the roadmap of targeted learning to translate meaningful research questions into realistic statistical estimation...">
 </head>
 <body>
 <span class="math inline">
@@ -59,6 +59,7 @@
 <li><a class="" href="sl3.html"><span class="header-section-number">4</span> Super (Machine) Learning</a></li>
 <li><a class="" href="tmle3.html"><span class="header-section-number">5</span> The TMLE Framework</a></li>
 <li><a class="" href="r6.html"><span class="header-section-number">6</span> A Primer on the R6 Class System</a></li>
+<li><a class="" href="solutions.html"><span class="header-section-number">7</span> Exercise Solutions</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -76,14 +77,11 @@
 <span class="header-section-number">2.1</span> Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>By the end of this chapter you will be able to:</p>
-<ol style="list-style-type: decimal">
-<li>Translate scientific questions to statistical questions.</li>
-<li>Define a statistical model based on the knowledge of the experiment that
-generated the data.</li>
-<li>Identify a causal parameter as a function of the observed data distribution.</li>
-<li>Explain the following causal and statistical assumptions and their
-implications: i.i.d., consistency, interference, positivity, SUTVA.</li>
-</ol>
+<ul>
+<li>Follow the roadmap of targeted learning to translate meaningful research
+questions into realistic statistical estimation problems, and obtain valid
+inference in terms of confidence intervals and p-values.</li>
+</ul>
 </div>
 <div id="introduction" class="section level2">
 <h2>
@@ -97,9 +95,9 @@ model, a statistical target parameter representing an answer to the question of
 interest, and the notion of an estimator and sampling distribution of the
 estimator.</p>
 </div>
-<div id="the-roadmap" class="section level2">
+<div id="intro-roadmap" class="section level2">
 <h2>
-<span class="header-section-number">2.3</span> The Roadmap<a class="anchor" aria-label="anchor" href="#the-roadmap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3</span> The Roadmap<a class="anchor" aria-label="anchor" href="#intro-roadmap"><i class="fas fa-link"></i></a>
 </h2>
 <p>Following the roadmap is a process of five stages.</p>
 <ol style="list-style-type: decimal">
@@ -434,7 +432,7 @@ NCT01590095.</p>
 <span class="co"># read in data</span>
 <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/tlverse/tlverse-data/master/wash-benefits/washb_data.csv"</span><span class="op">)</span>
 <span class="va">dat</span>
-<span class="co">#&gt; # A tibble: 4,695 x 28</span>
+<span class="co">#&gt; # A tibble: 4,695 × 28</span>
 <span class="co">#&gt;     whz tr     fracode month  aged sex    momage momedu momheight hfiacat  Nlt18</span>
 <span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;</span>
 <span class="co">#&gt; 1  0    Contr… N05265      9   268 male       30 Prima…      146. Food Se…     3</span>
@@ -892,9 +890,9 @@ covariate. Note that the <em>asset</em> variables reflect socio-economic status 
 study participants. Notice also the uniform distribution of the treatment groups
 (with twice as many controls); this is, of course, by design.</p>
 </div>
-<div id="exercises" class="section level2">
+<div id="roadmap-exercises" class="section level2">
 <h2>
-<span class="header-section-number">2.7</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.7</span> Exercises<a class="anchor" aria-label="anchor" href="#roadmap-exercises"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li>
@@ -935,6 +933,13 @@ problematic?</li>
 </ol>
 </li>
 </ol>
+<div id="exercise-solutions" class="section level3 unnumbered">
+<h3>Exercise Solutions<a class="anchor" aria-label="anchor" href="#exercise-solutions"><i class="fas fa-link"></i></a>
+</h3>
+<p>After all exercises are submitted, the solutions will be made available here:
+<a href="solutions.html#solutions-roadmap">Roadmap Exercise Solutions</a>.</p>
+
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -947,7 +952,7 @@ problematic?</li>
 <li><a class="nav-link" href="#learning-objectives-1"><span class="header-section-number">2.1</span> Learning Objectives</a></li>
 <li><a class="nav-link" href="#introduction"><span class="header-section-number">2.2</span> Introduction</a></li>
 <li>
-<a class="nav-link" href="#the-roadmap"><span class="header-section-number">2.3</span> The Roadmap</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#intro-roadmap"><span class="header-section-number">2.3</span> The Roadmap</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data-as-a-random-variable-with-a-probability-distribution-o-sim-p_0">(1) Data as a random variable with a probability distribution, \(O \sim P_0\)</a></li>
 <li><a class="nav-link" href="#the-statistical-model-mathcalm-such-that-p_0-in-mathcalm">(2) The statistical model \(\mathcal{M}\) such that \(P_0 \in \mathcal{M}\)</a></li>
 <li><a class="nav-link" href="#the-statistical-target-parameter-psi-and-estimand-psip_0">(3) The statistical target parameter \(\Psi\) and estimand \(\Psi(P_0)\)</a></li>
@@ -963,7 +968,9 @@ problematic?</li>
 </ul>
 </li>
 <li><a class="nav-link" href="#the-wash-benefits-example-dataset"><span class="header-section-number">2.6</span> The WASH Benefits Example Dataset</a></li>
-<li><a class="nav-link" href="#exercises"><span class="header-section-number">2.7</span> Exercises</a></li>
+<li>
+<a class="nav-link" href="#roadmap-exercises"><span class="header-section-number">2.7</span> Exercises</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-solutions">Exercise Solutions</a></li></ul>
+</li>
 </ul>
 
       <div class="book-extra">

@@ -5,7 +5,7 @@ subtitle: "A Workshop for the Public Health and Epidemiology Program (PASPE) at
 the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: July 20, 2021"
+date: "updated: July 24, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -124,7 +124,7 @@ After completing this workshop, students will be able to:
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
 * **After class:** Please complete the [Roadmap Chapter 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) and 
-  submit to the Moodle platform by midnight on 16 August. 
+  email to rachaelvphillips@berkeley.edu by midnight on 16 August. 
 
 ### 17 August 2021 --- Cross-validation {-}
 
@@ -135,7 +135,7 @@ After completing this workshop, students will be able to:
   `origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
 * **After class:** Please complete the [Cross-validation 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises) 
-  and submit to the Moodle platform by midnight on 17 August. 
+  and email to rachaelvphillips@berkeley.edu by midnight on 17 August. 
 
 ### 18 August 2021 --- Super Learning {-}
 
@@ -146,7 +146,7 @@ After completing this workshop, students will be able to:
   `sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
 * **After class:** Please complete the [Super Learning 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/sl3.html#sl3-exercises) 
-  and submit to the Moodle platform by midnight on 18 August. 
+  and email to rachaelvphillips@berkeley.edu by midnight on 18 August. 
   
 ### 19 August 2021 --- Targeted Maximum Likelihood Estimation (TMLE) {-}
 
@@ -156,14 +156,11 @@ After completing this workshop, students will be able to:
   Framework](https://tlverse.org/tmlcimx2021-workshop/tmle3.html)
 * **After class:** Please complete the [TMLE 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/tmle3.html#exercises-1) 
-  and submit to the Moodle platform by midnight on 19 August. 
+  and email to rachaelvphillips@berkeley.edu by midnight on 19 August. 
     
 ## Course resources {-}
 
 * __Slack__: 
-
-* __Moodle__: Exercises will be due to the Moodle platform on each of the four 
-  days by midnight. 
 
 * __Code__: `R` scripts for each section of the workshop are available via the 
   GitHub repository for the workshop at
@@ -277,8 +274,8 @@ following packages:
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.12    |Github (rstudio/bookdown\@0de8f11) |
-|bslib      |0.2.5.9002 |Github (rstudio/bslib\@b86fc24)    |
+|bookdown   |0.22.15    |Github (rstudio/bookdown\@6ae8900) |
+|bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |
 |delayed    |0.3.0      |CRAN (R 4.1.0)                     |
 |devtools   |2.4.2      |CRAN (R 4.1.0)                     |
@@ -292,12 +289,12 @@ following packages:
 |knitr      |1.33       |CRAN (R 4.1.0)                     |
 |mvtnorm    |1.1-2      |CRAN (R 4.1.0)                     |
 |origami    |1.0.3      |CRAN (R 4.1.0)                     |
-|readr      |1.4.0      |CRAN (R 4.1.0)                     |
+|readr      |2.0.0      |CRAN (R 4.1.0)                     |
 |rmarkdown  |2.9        |CRAN (R 4.1.0)                     |
 |skimr      |2.1.3      |CRAN (R 4.1.0)                     |
 |sl3        |1.4.3      |Github (tlverse/sl3\@aeeb7e9)      |
 |stringr    |1.4.0      |CRAN (R 4.1.0)                     |
-|tibble     |3.1.2      |CRAN (R 4.1.0)                     |
+|tibble     |3.1.3      |CRAN (R 4.1.0)                     |
 |tidyr      |1.1.3      |CRAN (R 4.1.0)                     |
 |tidyverse  |1.3.1      |CRAN (R 4.1.0)                     |
 |tmle3      |0.2.0      |Github (tlverse/tmle3\@425e21c)    |
