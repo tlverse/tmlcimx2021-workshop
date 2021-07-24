@@ -3,9 +3,11 @@
 ## Learning Objectives
 
 By the end of this chapter you will be able to:
+
 - Follow the roadmap of targeted learning to translate meaningful research 
   questions into realistic statistical estimation problems, and obtain valid 
   inference in terms of confidence intervals and p-values.
+  
 ## Introduction
 
 The roadmap of statistical learning is concerned with the translation from
