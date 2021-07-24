@@ -1,0 +1,129 @@
+# Exercise Solutions {#solutions}
+
+Here you will find solutions to the exercises. Note that there are many possible 
+solutions to some of these questions.
+
+## The Roadmap Exercise Solutions {#solutions-roadmap}
+
+<!--
+Potential solutions to the [Roadmap Exercises](#roadmap-exercises) are listed 
+below.
+
+2. What is the objective of the roadmap?
+3. Specifying a statistical estimation problem consists of what three steps?
+4. Provide a definition and an example for each of the following:
+
+    a. Statistical model 
+    b. Target estimand
+    c. Estimator
+    
+7. Provide examples of data under the following scenarios:
+
+    a. The observations are not independent, but are identically distributed.
+    b. The observations are neither independent nor identically distributed. 
+
+8. Traditional data analysis concerns  
+ 
+    a. Common data science practice encourages users to "check" models after 
+       they have been fit to the data so that if one of the checks fail, then a 
+       new model can be fit to the data. Why can this approach be problematic?
+    b. Common data science practice lets the type of data at hand dictate the 
+       scientific question of interest and the statistical model. Why is this 
+       problematic?
+-->
+## Cross-validation {#solutions-cv}
+
+
+## Super Learning Exercise Solutions {#solutions-sl}
+<!--
+### Exercise 1 Solution {#sl3ex1-sol}
+
+Here is a potential solution to the [`sl3` Exercise 1 -- Predicting Myocardial
+Infarction with `sl3`](#sl3ex1).
+
+```{r sl-ex1-setup, eval=FALSE}
+library(data.table)
+library(readr)
+library(origami)
+library(sl3)
+
+db_data <- url(
+  "https://raw.githubusercontent.com/benkeser/sllecture/master/chspred.csv"
+)
+chspred <- read_csv(file = db_data, col_names = TRUE)
+
+```
+
+1. Create an `sl3` task, setting myocardial infarction `mi` as the outcome and
+   using all available covariate data.
+```{r sl-ex1-1, eval=FALSE}
+chspred_task <- make_sl3_Task(
+  data = chspred, covariates = head(colnames(chspred), -1), outcome = "mi"
+)
+```
+
+2. Make a library of seven relatively fast base learning algorithms. Customize 
+   tuning parameters for one of your learners. Feel free to use learners from 
+   `sl3` or `SuperLearner`.
+```{r sl-ex1-2, eval=FALSE}
+lasso_learner <- Lrnr_glmnet$new(alpha = 1)
+ridge_learner <- Lrnr_glmnet$new(alpha = 0)
+enet_learner <- Lrnr_glmnet$new(alpha = 0.5)
+glm_fast_learner <- Lrnr_glm_fast$new()
+ranger_learner <- Lrnr_ranger$new()
+svm_learner <- Lrnr_svm$new()
+xgb_learner <- Lrnr_xgboost$new()
+# curated_glm_learner uses formula = "mi ~ smoke + beta + waist"
+curated_glm_learner <- Lrnr_glm_fast$new(covariates = c("smoke, beta, waist"))
+mean_learner <- Lrnr_mean$new() # That is one mean learner!
+```
+
+3. Incorporate at least one pipeline with feature selection. Any screener and
+   learner(s) can be used.
+```{r sl-ex1-3, eval=FALSE}
+screen_cor <- make_learner(Lrnr_screener_correlation)
+glm_pipeline <- make_learner(Pipeline, screen_cor, glm_fast_learner)
+```
+
+4. With the default metalearner and base learners, make the Super Learner (SL) 
+   and train it on the task.
+```{r sl-ex1-4, eval=FALSE}
+# stack learners together
+stack <- make_learner(
+  Stack,
+  glm_pipeline, lasso_learner, ridge_learner, enet_learner,
+  curated_glm_learner, mean_learner, glm_fast_learner,
+  ranger_learner, svm_learner, xgb_learner
+)
+
+# make SL with default metalearner
+sl <- Lrnr_sl$new(stack)
+
+# train SL
+sl_fit <- sl$train(chspred_task)
+```
+
+5. Print your SL fit by calling `print()` with `$`.
+```{r sl-ex1-5, eval=FALSE}
+sl_fit$print()
+```
+
+6. Cross-validate your SL fit to see how well it performs on unseen
+   data. Specify a valid loss function to evaluate the SL.
+```{r sl-ex1-6, eval=FALSE}
+CVsl <- CV_lrnr_sl(sl_fit, chspred_task, loss_loglik_binomial)
+CVsl
+```
+
+7. Use the `importance()` function to identify the "most important" predictor of
+   myocardial infarction, according to `sl3` importance metrics.
+```{r sl-ex1-7, eval=FALSE}
+varimp <- importance(sl_fit, type = "permute")
+varimp %>%
+  importance_plot(
+    main = "sl3 Variable Importance for Myocardial Infarction Prediction"
+  )
+```
+-->
+## TMLE {#solutions-tmle}
+
