@@ -23,5 +23,6 @@ rmd_files: [
   #"07-tmle3mopttx.Rmd",
   #"08-tmle3shift.Rmd",
   "99-primer_R6.Rmd",
+  "99-solutions.Rmd",
   "references.Rmd"
 ]
