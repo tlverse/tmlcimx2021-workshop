@@ -5,7 +5,7 @@ subtitle: "A Workshop for the Public Health and Epidemiology Program (PASPE) at
 the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: July 24, 2021"
+date: "updated: August 03, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -123,8 +123,12 @@ After completing this workshop, students will be able to:
   [Introduction to the 
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
 * **After class:** Please complete the [Roadmap Chapter 
-  Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) and 
-  email to rachaelvphillips@berkeley.edu by midnight on 16 August. 
+  Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) in 
+  a text editor (such as Microsoft Word) and *by midnight on 16 August*, send
+  your solutions file to Slack by attaching it to a direct message (DM) with an
+  instructor (Jeremy Coyle, Nima Hejazi, Ivana Malenica, or Rachael Phillips).
+  For guidance on attaching files to Slack DMs, see the ["Add files to Slack" 
+  help page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
 
 ### 17 August 2021 --- Cross-validation {-}
 
@@ -134,8 +138,12 @@ After completing this workshop, students will be able to:
 * **During class:** [Cross-validation with 
   `origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
 * **After class:** Please complete the [Cross-validation 
-  Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises) 
-  and email to rachaelvphillips@berkeley.edu by midnight on 17 August. 
+  Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises)
+  and *by midnight on 17 August*, send your solutions file to Slack by attaching 
+  it to a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, 
+  Ivana Malenica, or Rachael Phillips). For guidance on attaching files to 
+  Slack DMs, see the ["Add files to Slack" help 
+  page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
 
 ### 18 August 2021 --- Super Learning {-}
 
@@ -146,8 +154,12 @@ After completing this workshop, students will be able to:
   `sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
 * **After class:** Please complete the [Super Learning 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/sl3.html#sl3-exercises) 
-  and email to rachaelvphillips@berkeley.edu by midnight on 18 August. 
-  
+  and *by midnight on 18 August*, send your solutions file to Slack by attaching 
+  it to a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, 
+  Ivana Malenica, or Rachael Phillips). For guidance on attaching files to 
+  Slack DMs, see the ["Add files to Slack" help 
+  page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
+
 ### 19 August 2021 --- Targeted Maximum Likelihood Estimation (TMLE) {-}
 
 * **Before class:** Please read ["Chapter 7: The TMLE Framework" of the 
@@ -156,11 +168,21 @@ After completing this workshop, students will be able to:
   Framework](https://tlverse.org/tmlcimx2021-workshop/tmle3.html)
 * **After class:** Please complete the [TMLE 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/tmle3.html#exercises-1) 
-  and email to rachaelvphillips@berkeley.edu by midnight on 19 August. 
+  and *by midnight on 19 August*, send your solutions file to Slack by attaching 
+  it to a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, 
+  Ivana Malenica, or Rachael Phillips). For guidance on attaching files to 
+  Slack DMs, see the ["Add files to Slack" help 
+  page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
     
 ## Course resources {-}
 
-* __Slack__: 
+* __Slack__: Slack will be used as a discussion forum, and students will submit 
+  exercise solutions to Slack by sending their solutions file as an attachment 
+  in a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, Ivana 
+  Malenica, or Rachael Phillips). For guidance on attaching files to Slack 
+  DMs, see the ["Add files to Slack" help 
+  page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
+  The link to join Slack is ADD LINK.
 
 * __Code__: `R` scripts for each section of the workshop are available via the 
   GitHub repository for the workshop at
@@ -274,7 +296,7 @@ following packages:
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.15    |Github (rstudio/bookdown\@6ae8900) |
+|bookdown   |0.22.17    |Github (rstudio/bookdown\@7be12f2) |
 |bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |
 |delayed    |0.3.0      |CRAN (R 4.1.0)                     |
