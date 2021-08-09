@@ -1,8 +1,8 @@
 ---
 knit: "bookdown::render_book"
 title: "Targeted Machine Learning with Big Data in the `tlverse`"
-subtitle: "A Workshop for the Public Health and Epidemiology Program (PASPE) at
-the National Institute of Public Health in Mexico"
+subtitle: "A Short Course for the Public Health and Epidemiology Program (PASPE) 
+ at the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
 date: "updated: `r format(Sys.time(), '%B %d, %Y')`"
@@ -20,11 +20,11 @@ always_allow_html: yes
 url: 'https\://tlverse.org/tmlcimx2021-workshop/'
 github-repo: tlverse/tmlcimx2021-workshop
 graphics: yes
-description: "Open source, reproducible teaching materials accompanying an
-  invited short course Targeted Machine Learning for Big Data with the
-  [`tlverse` software ecosystem](https://github.com/tlverse), for Programa de
-  Actualización en Salud Pública y Epidemiología of the Instituto Nacional de
-  Salud Públic de México."
+description: "Open source and reproducible teaching materials accompanying an
+  invited short course for the Public Health and Epidemiology Program (PASPE) at
+  the National Institute of Public Health in Mexico, Targeted Machine Learning 
+  for Big Data with the [`tlverse` software 
+  ecosystem](https://github.com/tlverse)"
 ---
 
 # Information {-}
