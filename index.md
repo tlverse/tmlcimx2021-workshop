@@ -1,11 +1,11 @@
 ---
 knit: "bookdown::render_book"
 title: "Targeted Machine Learning with Big Data in the `tlverse`"
-subtitle: "A Workshop for the Public Health and Epidemiology Program (PASPE) at
-the National Institute of Public Health in Mexico"
+subtitle: "A Short Course for the Public Health and Epidemiology Program (PASPE) 
+ at the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: August 03, 2021"
+date: "updated: August 10, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -20,11 +20,11 @@ always_allow_html: yes
 url: 'https\://tlverse.org/tmlcimx2021-workshop/'
 github-repo: tlverse/tmlcimx2021-workshop
 graphics: yes
-description: "Open source, reproducible teaching materials accompanying an
-  invited short course Targeted Machine Learning for Big Data with the
-  [`tlverse` software ecosystem](https://github.com/tlverse), for Programa de
-  Actualización en Salud Pública y Epidemiología of the Instituto Nacional de
-  Salud Públic de México."
+description: "Open source and reproducible teaching materials accompanying an
+  invited short course for the Public Health and Epidemiology Program (PASPE) at
+  the National Institute of Public Health in Mexico, Targeted Machine Learning 
+  for Big Data with the [`tlverse` software 
+  ecosystem](https://github.com/tlverse)"
 ---
 
 # Information {-}
@@ -56,7 +56,7 @@ learn how to use these tools in practice. With that in mind, we request all
 students **complete steps 1 and 2 the week/weekend before the workshop**.
 
 1. Join the Slack page dedicated to this workshop. Here is the invitation link 
-   to join: (add link).
+   to join: https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 2. Download the necessary software (instructions below). If you are experiencing 
    installation issues, please reach out on the Slack “#install” channel at 
    least a few days before the workshop.
@@ -182,7 +182,8 @@ After completing this workshop, students will be able to:
   Malenica, or Rachael Phillips). For guidance on attaching files to Slack 
   DMs, see the ["Add files to Slack" help 
   page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
-  The link to join Slack is ADD LINK.
+  The link to join Slack is 
+  https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 
 * __Code__: `R` scripts for each section of the workshop are available via the 
   GitHub repository for the workshop at
@@ -289,14 +290,14 @@ produce it.
 
 This book was written using [bookdown](http://bookdown.org/), and the complete
 source is available on [GitHub](https://github.com/tlverse/tlverse-handbook).
-This version of the book was built with R version 4.1.0 (2021-05-18),
+This version of the book was built with R version 4.1.1 (2021-08-10),
 [pandoc](https://pandoc.org/) version 2.7.3, and the
 following packages:
 
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.17    |Github (rstudio/bookdown\@7be12f2) |
+|bookdown   |0.22.17    |Github (rstudio/bookdown\@a3de608) |
 |bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |
 |delayed    |0.3.0      |CRAN (R 4.1.0)                     |
@@ -311,8 +312,8 @@ following packages:
 |knitr      |1.33       |CRAN (R 4.1.0)                     |
 |mvtnorm    |1.1-2      |CRAN (R 4.1.0)                     |
 |origami    |1.0.3      |CRAN (R 4.1.0)                     |
-|readr      |2.0.0      |CRAN (R 4.1.0)                     |
-|rmarkdown  |2.9        |CRAN (R 4.1.0)                     |
+|readr      |2.0.1      |CRAN (R 4.1.1)                     |
+|rmarkdown  |2.10       |CRAN (R 4.1.1)                     |
 |skimr      |2.1.3      |CRAN (R 4.1.0)                     |
 |sl3        |1.4.3      |Github (tlverse/sl3\@aeeb7e9)      |
 |stringr    |1.4.0      |CRAN (R 4.1.0)                     |
