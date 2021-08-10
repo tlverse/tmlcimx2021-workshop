@@ -17,11 +17,12 @@ rmd_files: [
   "01-motivation.Rmd",
   "02-intro-tlverse.Rmd",
   "03-intro-roadmap.Rmd",
-  "04-origami.Rmd",
-  "05-sl3.Rmd",
-  "06-tmle3.Rmd",
-  #"07-tmle3mopttx.Rmd",
-  #"08-tmle3shift.Rmd",
+  "04-intro-data.Rmd"
+  "05-origami.Rmd",
+  "06-sl3.Rmd",
+  "07-tmle3.Rmd",
+  #"08-tmle3mopttx.Rmd",
+  #"09-tmle3shift.Rmd",
   "99-primer_R6.Rmd",
   "99-solutions.Rmd",
   "references.Rmd"
