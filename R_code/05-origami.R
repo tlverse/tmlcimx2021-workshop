@@ -227,7 +227,7 @@ cv_rf <- function(fold, data, reg_form) {
 # now, let's cross-validate...
 folds <- make_folds(washb_data)
 cvrf_results <- cross_validate(
-  cv_fun = cv_rf, folds = folds, 
+  cv_fun = cv_rf, folds = folds,
   data = washb_data, reg_form = "whz ~ .",
   use_future = FALSE
 )

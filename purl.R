@@ -3,8 +3,12 @@ library(knitr)
 library(stringr)
 
 # get list of chapters for which to create .R files
-chapters <- setdiff(str_subset(dir(), ".Rmd"),
-                    c("index.Rmd", "references.Rmd", "99-solutions.Rmd"))
+chapters <- setdiff(
+  str_subset(dir(), ".Rmd"), 
+  c("01-motivation.Rmd", "02-intro-tlverse.Rmd", "intro-data.Rmd", "index.Rmd", 
+    "references.Rmd", "99-solutions.Rmd",  "99-primer_R6.Rmd")
+)
+                    
 
 # create .R files
 lapply(chapters, function(f) {
