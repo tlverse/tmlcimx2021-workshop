@@ -56,7 +56,7 @@ learn how to use these tools in practice. With that in mind, we request all
 students **complete steps 1 and 2 the week/weekend before the workshop**.
 
 1. Join the Slack page dedicated to this workshop. Here is the invitation link 
-   to join: (add link).
+   to join: https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 2. Download the necessary software (instructions below). If you are experiencing 
    installation issues, please reach out on the Slack “#install” channel at 
    least a few days before the workshop.
@@ -182,7 +182,8 @@ After completing this workshop, students will be able to:
   Malenica, or Rachael Phillips). For guidance on attaching files to Slack 
   DMs, see the ["Add files to Slack" help 
   page](https://slack.com/help/articles/201330736-Add-files-to-Slack#desktop-5).
-  The link to join Slack is ADD LINK.
+  The link to join Slack is 
+  https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 
 * __Code__: `R` scripts for each section of the workshop are available via the 
   GitHub repository for the workshop at
