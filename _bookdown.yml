@@ -17,7 +17,7 @@ rmd_files: [
   "01-motivation.Rmd",
   "02-intro-tlverse.Rmd",
   "03-intro-roadmap.Rmd",
-  "04-intro-data.Rmd"
+  "04-intro-data.Rmd",
   "05-origami.Rmd",
   "06-sl3.Rmd",
   "07-tmle3.Rmd",

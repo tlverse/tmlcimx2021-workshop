@@ -66,7 +66,8 @@ Software Download Information:
 * Some of the `R` packages we are working with at the short course (e.g., 
   glmnet) require `R` version 4.0 or greater. Links to install/update `R` can 
   be found at https://cloud.r-project.org. We also provide instructions for 
-  installing `R` and RStudio below in [_Setup instructions_](#setup).
+  installing `R` and RStudio below in [Setup 
+  instructions](https://tlverse.org/tmlcimx2021-workshop/#setup).
 * After updating `R` to version 4.0 or greater, this script should safely cover 
   all package installations: 
   https://github.com/tlverse/tmlcimx2021-workshop/blob/master/install.R.
@@ -281,7 +282,7 @@ online learning from data streams of vital signs, human-computer interaction,
 automated machine learning, and developing statistical analysis plans using 
 targeted learning.
 
-## Setup instructions {#setup} 
+## Setup instructions {-} 
 
 ### R and RStudio {-}
 

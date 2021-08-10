@@ -1,4 +1,4 @@
-# The WASH Benefits Example Dataset
+# The WASH Benefits Example Dataset {#data}
 
 The data come from a study of the effect of water quality, sanitation, hand
 washing, and nutritional interventions on child development in rural Bangladesh
