@@ -5,6 +5,9 @@ book_filename: "tmlcimx2021-workshop"
 before_chapter_script: "_common.R"
 clean: [packages.bib]
 
+env:
+  GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
 language:
   label:
     fig: "FIGURE "
