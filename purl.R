@@ -4,7 +4,7 @@ library(stringr)
 
 # get list of chapters for which to create .R files
 chapters <- setdiff(str_subset(dir(), ".Rmd"),
-                    c("index.Rmd", "references.Rmd"))
+                    c("index.Rmd", "references.Rmd", "99-solutions.Rmd"))
 
 # create .R files
 lapply(chapters, function(f) {

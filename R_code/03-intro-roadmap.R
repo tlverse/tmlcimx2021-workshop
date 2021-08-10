@@ -1,23 +1,19 @@
-## ---- echo=FALSE, eval=TRUE, fig.align="center"-------------------------------
-library(visNetwork)
-nodes <- data.frame(id = c("W", "A", "Y"))
-nodes$label <- nodes$id
-edges <- data.frame(from = c("W", "W", "A"), to = c("A", "Y", "Y"))
-network <- visNetwork(nodes, edges, height = "300px", width = "200px") %>%
-  visEdges(arrows = list(to = TRUE)) %>%
-  visLayout(randomSeed = 25)
-network
-
-
-## ----load_washb_data_intro, message=FALSE, warning=FALSE----------------------
-library(tidyverse)
-
-# read in data
-dat <- read_csv("https://raw.githubusercontent.com/tlverse/tlverse-data/master/wash-benefits/washb_data.csv")
-dat
-
-
-## ----skim_washb_data, message=FALSE, warning=FALSE----------------------------
-library(skimr)
-skim(dat)
+## ----simple-DAG---------------------------------------------------------------
+library(dagitty)
+library(ggdag)
+# make DAG by specifying dependence structure
+dag <- dagitty(
+  "dag {
+    W -> A
+    W -> Y
+    A -> Y
+    W -> A -> Y
+  }"
+)
+exposures(dag) <- c("A")
+outcomes(dag) <- c("Y")
+tidy_dag <- tidy_dagitty(dag)
+# visualize DAG
+ggdag(tidy_dag) +
+  theme_dag()
 
