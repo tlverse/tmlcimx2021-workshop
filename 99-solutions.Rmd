@@ -38,7 +38,7 @@ below.
 <!--
 ### Exercise 1 Solution {#sl3ex1-sol}
 
-Here is a potential solution to the [`sl3` Exercise 1 -- Predicting Myocardial
+Here is a potential solution to the [`sl3` Exercise 1 --- Predicting Myocardial
 Infarction with `sl3`](#sl3ex1).
 
 ```{r sl-ex1-setup, eval=FALSE}

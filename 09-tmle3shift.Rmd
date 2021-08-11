@@ -47,8 +47,8 @@ individual level, and define novel shift intervention functions.
 
 * Present a relatively simple yet extremely flexible manner by which _realistic_
   causal effects (and contrasts thereof) may be defined.
-* May be applied to nearly any manner of treatment variable -- continuous,
-  ordinal, categorical, binary -- allowing for a rich set of causal effects to
+* May be applied to nearly any manner of treatment variable --- continuous,
+  ordinal, categorical, binary --- allowing for a rich set of causal effects to
   be defined through this formalism.
 * Arguably the most general of the classes of interventions through which causal
   effects may be defined, and are conceptually simple.
@@ -275,7 +275,7 @@ To start, we will initialize a specification for the TMLE of our parameter of
 interest (a `tmle3_Spec` in the `tlverse` nomenclature) simply by calling
 `tmle_shift`. We specify the argument `shift_val = 0.5` when initializing the
 `tmle3_Spec` object to communicate that we're interested in a shift of $0.5$ on
-the scale of the treatment $A$ -- that is, we specify $\delta = 0.5$.
+the scale of the treatment $A$ --- that is, we specify $\delta = 0.5$.
 
 ```{r spec_init-shift}
 # initialize a tmle specification

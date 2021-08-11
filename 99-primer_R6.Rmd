@@ -22,7 +22,7 @@ elements:
 
 Objects are members of classes, which define what those specific fields and
 methods are. Classes can inherit elements from other classes (sometimes called
-base classes) -- accordingly, classes that are similar, but not exactly the
+base classes) --- accordingly, classes that are similar, but not exactly the
 same, can share some parts of their definitions.
 
 Many different implementations of OOP exist, with variations in how these
