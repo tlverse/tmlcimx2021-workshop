@@ -4,22 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Cross-validation | Targeted Machine Learning with Big Data in the tlverse</title>
+<title>Chapter 4 Cross-validation | Targeted Machine Learning with Big Data in the tlverse</title>
 <meta name="author" content="Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips">
-<meta name="description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-10 Learning Objectives By the end of this chapter you will be able...">
+<meta name="description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-11 Learning Objectives By the end of this chapter you will be able...">
 <meta name="generator" content="bookdown 0.22.17 with bs4_book()">
-<meta property="og:title" content="Chapter 3 Cross-validation | Targeted Machine Learning with Big Data in the tlverse">
+<meta property="og:title" content="Chapter 4 Cross-validation | Targeted Machine Learning with Big Data in the tlverse">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://tlverse.org/tmlcimx2021-workshop/origami.html">
-<meta property="og:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-10 Learning Objectives By the end of this chapter you will be able...">
+<meta property="og:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-11 Learning Objectives By the end of this chapter you will be able...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 3 Cross-validation | Targeted Machine Learning with Big Data in the tlverse">
-<meta name="twitter:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-10 Learning Objectives By the end of this chapter you will be able...">
+<meta name="twitter:title" content="Chapter 4 Cross-validation | Targeted Machine Learning with Big Data in the tlverse">
+<meta name="twitter:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-11 Learning Objectives By the end of this chapter you will be able...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9002/transition.js"></script><script src="libs/bs3compat-0.2.5.9002/tabs.js"></script><script src="libs/bs3compat-0.2.5.9002/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
-<script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
+<script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
 </head>
 <body>
 <span class="math inline">
@@ -58,11 +59,12 @@
 <li><a class="" href="motivation.html">Motivation</a></li>
 <li><a class="" href="tlverse.html"><span class="header-section-number">1</span> Welcome to the tlverse</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> The Roadmap for Targeted Learning</a></li>
-<li><a class="active" href="origami.html"><span class="header-section-number">3</span> Cross-validation</a></li>
-<li><a class="" href="sl3.html"><span class="header-section-number">4</span> Super (Machine) Learning</a></li>
-<li><a class="" href="tmle3.html"><span class="header-section-number">5</span> The TMLE Framework</a></li>
-<li><a class="" href="r6.html"><span class="header-section-number">6</span> A Primer on the R6 Class System</a></li>
-<li><a class="" href="solutions.html"><span class="header-section-number">7</span> Exercise Solutions</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">3</span> The WASH Benefits Example Dataset</a></li>
+<li><a class="active" href="origami.html"><span class="header-section-number">4</span> Cross-validation</a></li>
+<li><a class="" href="sl3.html"><span class="header-section-number">5</span> Super (Machine) Learning</a></li>
+<li><a class="" href="tmle3.html"><span class="header-section-number">6</span> The TMLE Framework</a></li>
+<li><a class="" href="r6.html"><span class="header-section-number">7</span> A Primer on the R6 Class System</a></li>
+<li><a class="" href="solutions.html"><span class="header-section-number">8</span> Exercise Solutions</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -73,14 +75,14 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="origami" class="section level1">
 <h1>
-<span class="header-section-number">3</span> Cross-validation<a class="anchor" aria-label="anchor" href="#origami"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> Cross-validation<a class="anchor" aria-label="anchor" href="#origami"><i class="fas fa-link"></i></a>
 </h1>
 <p><em>Ivana Malenica</em></p>
 <p>Based on the <a href="https://github.com/tlverse/origami"><code>origami</code> <code>R</code> package</a>
 by <em>Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips</em>.</p>
-<p>Updated: 2021-08-10</p>
-<div id="learning-objectives-2" class="section level2 unnumbered">
-<h2>Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives-2"><i class="fas fa-link"></i></a>
+<p>Updated: 2021-08-11</p>
+<div id="learning-objectives-1" class="section level2 unnumbered">
+<h2>Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>By the end of this chapter you will be able to:</p>
 <ol style="list-style-type: decimal">
@@ -99,10 +101,10 @@ using the the <code>origami</code> <code>R</code> package.</p></li>
 </div>
 <div id="introduction-1" class="section level2">
 <h2>
-<span class="header-section-number">3.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>In this chapter, we start elaborating on the estimation step outlined in the
-<a href="intro.html#intro">introductory chapter</a>, which discussed the <a href="#roadmap"><em>Roadmap for Targeted
+<a href="intro.html#intro">introductory chapter</a>, which discussed the <a href="intro.html#roadmap"><em>Roadmap for Targeted
 Learning</em></a>. In order to generate an initial estimate of our target
 parameter – which is the focus of the following <a href="sl3.html#sl3">chapter on Super
 Learning</a>, we first need to translate, and incorporate, our knowledge
@@ -130,7 +132,7 @@ statistical learning method.</li>
 </div>
 <div id="background" class="section level2">
 <h2>
-<span class="header-section-number">3.2</span> Background<a class="anchor" aria-label="anchor" href="#background"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Background<a class="anchor" aria-label="anchor" href="#background"><i class="fas fa-link"></i></a>
 </h2>
 <p>Ideally, in a data-rich scenario, we would split our dataset into three parts:</p>
 <ol style="list-style-type: decimal">
@@ -158,7 +160,7 @@ addition, they might provide more insight on variability and robustness of the
 algorithm fit then fitting an algorithm only once on all the training data.</p>
 <div id="introducing-cross-validation" class="section level3">
 <h3>
-<span class="header-section-number">3.2.1</span> Introducing: cross-validation<a class="anchor" aria-label="anchor" href="#introducing-cross-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1</span> Introducing: cross-validation<a class="anchor" aria-label="anchor" href="#introducing-cross-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>In this chapter, we focus on <strong>cross-validation</strong> – an essential tool for
 evaluating how any given algorithm extends from a sample to the target
@@ -191,9 +193,9 @@ package, and show their use in applied settings.</p>
 </div>
 <div id="estimation-roadmap-how-does-it-all-fit-together" class="section level2">
 <h2>
-<span class="header-section-number">3.3</span> Estimation Roadmap: how does it all fit together?<a class="anchor" aria-label="anchor" href="#estimation-roadmap-how-does-it-all-fit-together"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Estimation Roadmap: how does it all fit together?<a class="anchor" aria-label="anchor" href="#estimation-roadmap-how-does-it-all-fit-together"><i class="fas fa-link"></i></a>
 </h2>
-<p>Similarly to how we defined the <a href="#roadmap"><em>Roadmap for Targeted Learning</em></a>, we
+<p>Similarly to how we defined the <a href="intro.html#roadmap"><em>Roadmap for Targeted Learning</em></a>, we
 can define the <strong>Estimation Roadmap</strong> to guide the estimation process. In
 particular, we have developed a unified loss-based cross-validation methodology
 for estimator construction, selection, and performance assessment in a series of
@@ -225,7 +227,7 @@ full data into loss based learning for general censored data.</p>
 </div>
 <div id="example-cross-validation-and-prediction" class="section level2">
 <h2>
-<span class="header-section-number">3.4</span> Example: cross-validation and prediction<a class="anchor" aria-label="anchor" href="#example-cross-validation-and-prediction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> Example: cross-validation and prediction<a class="anchor" aria-label="anchor" href="#example-cross-validation-and-prediction"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now that we introduced the Estimation Roadmap, we can define our objective with
 more mathematical notation, using prediction as an example. Let the observed
@@ -256,7 +258,7 @@ cross-validation scheme, tailored to the problem and data set in hand.</p>
 </div>
 <div id="cross-validation-schemes-in-origami" class="section level2">
 <h2>
-<span class="header-section-number">3.5</span> Cross-validation schemes in <code>origami</code><a class="anchor" aria-label="anchor" href="#cross-validation-schemes-in-origami"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> Cross-validation schemes in <code>origami</code><a class="anchor" aria-label="anchor" href="#cross-validation-schemes-in-origami"><i class="fas fa-link"></i></a>
 </h2>
 <p>As we specified earlier, the particular distribution of the split vector <span class="math inline">\(B_n\)</span>
 defines the type of the cross-validation method. In the following, we describe
@@ -273,7 +275,7 @@ illustration, we will start by treating the data as independent and identically
 distributed (i.i.d.) random draws. To see what each cross-validation scheme is
 doing, we will subset the data to only <span class="math inline">\(n=30\)</span>. Note that each row represents an
 i.i.d. sample, indexed by the row number.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tlverse.org/origami">origami</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span>
@@ -899,11 +901,11 @@ Severely Food Insecure
 </div>
 <div id="cross-validation-for-i.i.d.-data" class="section level3">
 <h3>
-<span class="header-section-number">3.5.1</span> Cross-validation for i.i.d. data<a class="anchor" aria-label="anchor" href="#cross-validation-for-i.i.d.-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1</span> Cross-validation for i.i.d. data<a class="anchor" aria-label="anchor" href="#cross-validation-for-i.i.d.-data"><i class="fas fa-link"></i></a>
 </h3>
 <div id="re-substitution" class="section level4">
 <h4>
-<span class="header-section-number">3.5.1.1</span> Re-substitution<a class="anchor" aria-label="anchor" href="#re-substitution"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.1</span> Re-substitution<a class="anchor" aria-label="anchor" href="#re-substitution"><i class="fas fa-link"></i></a>
 </h4>
 <p>The re-substitution method is the simplest strategy for estimating the risk
 associated with fitting a proposed algorithm on a set of observations. Here, all
@@ -924,7 +926,7 @@ unique i.i.d. sample. Notice the structure of the <code>origami</code> output:</
 <p>This structure of the <code>origami</code> output (aka, fold(s)) will persist for each of the
 cross-validation schemes we present in this chapter. Below, we show the fold
 generated by the re-substitution method:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_resubstitution</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; $v</span>
@@ -943,7 +945,7 @@ generated by the re-substitution method:</p>
 </div>
 <div id="holdout-method" class="section level4">
 <h4>
-<span class="header-section-number">3.5.1.2</span> Holdout method<a class="anchor" aria-label="anchor" href="#holdout-method"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.2</span> Holdout method<a class="anchor" aria-label="anchor" href="#holdout-method"><i class="fas fa-link"></i></a>
 </h4>
 <p>The holdout method, or the validation set approach, consists of randomly
 dividing the available data into the training set and validation set (holdout
@@ -964,7 +966,7 @@ result in bias.</p>
 </div>
 <div id="leave-one-out" class="section level4">
 <h4>
-<span class="header-section-number">3.5.1.3</span> Leave-one-out<a class="anchor" aria-label="anchor" href="#leave-one-out"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.3</span> Leave-one-out<a class="anchor" aria-label="anchor" href="#leave-one-out"><i class="fas fa-link"></i></a>
 </h4>
 <p>The leave-one-out cross-validation scheme is closely related to the holdout
 method. In particular, it also involves splitting the data into the training and
@@ -990,7 +992,7 @@ package below; we will use the function <code><a href="http://tlverse.org/origam
 <code><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_loo(n)</a></code>, similarly to the re-substitution method, we just need the total
 number of samples we want to cross-validate. We show the first two folds
 generated by the leave-one-out cross-validation below.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_loo</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span><span class="op">)</span>
 <span class="va">folds</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="co">#&gt; $v</span>
@@ -1021,7 +1023,7 @@ generated by the leave-one-out cross-validation below.</p>
 </div>
 <div id="v-fold" class="section level4">
 <h4>
-<span class="header-section-number">3.5.1.4</span> V-fold<a class="anchor" aria-label="anchor" href="#v-fold"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.4</span> V-fold<a class="anchor" aria-label="anchor" href="#v-fold"><i class="fas fa-link"></i></a>
 </h4>
 <p>An alternative to leave-one-out is V-fold cross-validation. This
 cross-validation scheme randomly divides the data into <span class="math inline">\(v\)</span> sets (folds) of equal
@@ -1056,7 +1058,7 @@ for <code><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_vf
 cross-validated, and the number of folds we want to get.</p>
 <p>At <span class="math inline">\(V=2\)</span>, we get 2 folds with <span class="math inline">\(n/2\)</span> number of samples in both training and
 validation set.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_vfold</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span>, V <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
 <span class="va">folds</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="co">#&gt; $v</span>
@@ -1085,7 +1087,7 @@ validation set.</p>
 </div>
 <div id="monte-carlo" class="section level4">
 <h4>
-<span class="header-section-number">3.5.1.5</span> Monte Carlo<a class="anchor" aria-label="anchor" href="#monte-carlo"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.5</span> Monte Carlo<a class="anchor" aria-label="anchor" href="#monte-carlo"><i class="fas fa-link"></i></a>
 </h4>
 <p>With Monte Carlo cross-validation, we randomly select some fraction of the data
 (without replacement) to form the training set; we assign the rest of the
@@ -1114,7 +1116,7 @@ to setup <code><a href="http://tlverse.org/origami/reference/fold_funs.html">fol
 </ol>
 <p>At <span class="math inline">\(V=2\)</span> and <span class="math inline">\(pvalidation=0.2\)</span>, we obtain 2 folds with approximately <span class="math inline">\(6\)</span> samples
 in validation set per fold.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_montecarlo</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span>, V <span class="op">=</span> <span class="fl">2</span>, pvalidation <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>
 <span class="va">folds</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="co">#&gt; $v</span>
@@ -1143,7 +1145,7 @@ in validation set per fold.</p>
 </div>
 <div id="bootstrap" class="section level4">
 <h4>
-<span class="header-section-number">3.5.1.6</span> Bootstrap<a class="anchor" aria-label="anchor" href="#bootstrap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.6</span> Bootstrap<a class="anchor" aria-label="anchor" href="#bootstrap"><i class="fas fa-link"></i></a>
 </h4>
 <p>The bootstrap cross-validation also consists of randomly selecting samples, with
 replacement, for the training set. The rest of the samples not picked for the
@@ -1163,7 +1165,7 @@ below using the function <code><a href="http://tlverse.org/origami/reference/fol
 </ol>
 <p>At <span class="math inline">\(V=2\)</span>, we obtain <span class="math inline">\(2\)</span> folds with different number of samples in the validation
 set across folds.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_bootstrap</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span>, V <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
 <span class="va">folds</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="co">#&gt; $v</span>
@@ -1195,7 +1197,7 @@ set across folds.</p>
 </div>
 <div id="cross-validation-for-dependent-data" class="section level3">
 <h3>
-<span class="header-section-number">3.5.2</span> Cross-validation for dependent data<a class="anchor" aria-label="anchor" href="#cross-validation-for-dependent-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2</span> Cross-validation for dependent data<a class="anchor" aria-label="anchor" href="#cross-validation-for-dependent-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code>origami</code> package also supports numerous cross-validation schemes for
 time-series data, for both single and multiple time-series with arbitrary time
@@ -1211,7 +1213,7 @@ international airline passengers from 1949 to 1960. This dataset is already of a
 time series class therefore no further class or date manipulation is required.</p>
 <p><strong>Goal:</strong> we want to forecast the number of airline passengers at time <span class="math inline">\(h\)</span>
 horizon using the historical data from 1949 to 1960.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sinhrks/ggfortify">ggfortify</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">AirPassengers</span><span class="op">)</span>
@@ -1225,10 +1227,10 @@ horizon using the historical data from 1949 to 1960.</p>
   <span class="op">)</span>
 
 <span class="va">t</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">AP</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="04-origami_files/figure-html/plot_airpass-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="05-origami_files/figure-html/plot_airpass-1.png" width="80%" style="display: block; margin: auto;"></div>
 <div id="rolling-origin" class="section level4">
 <h4>
-<span class="header-section-number">3.5.2.1</span> Rolling origin<a class="anchor" aria-label="anchor" href="#rolling-origin"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2.1</span> Rolling origin<a class="anchor" aria-label="anchor" href="#rolling-origin"><i class="fas fa-link"></i></a>
 </h4>
 <p>Rolling origin cross-validation scheme lends itself to “online” algorithms,
 where large streams of data have to be fit continually, and the final fit is
@@ -1248,7 +1250,7 @@ performance on 10 time points in the future.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="img/png/rolling_origin.png" alt="Rolling origin CV" width="80%"><p class="caption">
-FIGURE 3.1: Rolling origin CV
+FIGURE 4.1: Rolling origin CV
 </p>
 </div>
 <p>We illustrate the usage of the rolling origin cross-validation with <code>origami</code>
@@ -1263,7 +1265,7 @@ package below using the function <code><a href="http://tlverse.org/origami/refer
 <p>Our time-series has <span class="math inline">\(t=144\)</span> time points. Setting the <code>first_window</code> to <span class="math inline">\(50\)</span>,
 <code>validation_size</code> to 10, <code>gap</code> to 5 and <code>batch</code> to 20, we get 4 time-series
 folds; we show the first two below.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_rolling_origin</a></span><span class="op">(</span>
   <span class="va">t</span>,
   first_window <span class="op">=</span> <span class="fl">50</span>, validation_size <span class="op">=</span> <span class="fl">10</span>, gap <span class="op">=</span> <span class="fl">5</span>, batch <span class="op">=</span> <span class="fl">20</span>
@@ -1298,7 +1300,7 @@ folds; we show the first two below.</p>
 </div>
 <div id="rolling-window" class="section level4">
 <h4>
-<span class="header-section-number">3.5.2.2</span> Rolling window<a class="anchor" aria-label="anchor" href="#rolling-window"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2.2</span> Rolling window<a class="anchor" aria-label="anchor" href="#rolling-window"><i class="fas fa-link"></i></a>
 </h4>
 <p>Instead of adding more time points to the training set per each iteration, the
 rolling window cross-validation scheme “rolls” the training sample forward by
@@ -1321,7 +1323,7 @@ algorithm on 10 time points in the future.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="img/png/rolling_window.png" alt="Rolling window CV" width="80%"><p class="caption">
-FIGURE 3.2: Rolling window CV
+FIGURE 4.2: Rolling window CV
 </p>
 </div>
 <p>We illustrate the usage of the rolling window cross-validation with <code>origami</code>
@@ -1335,7 +1337,7 @@ package below using the function <code><a href="http://tlverse.org/origami/refer
 </ol>
 <p>Setting the <code>window_size</code> to <span class="math inline">\(50\)</span>, <code>validation_size</code> to 10, <code>gap</code> to 5 and
 <code>batch</code> to 20, we also get 4 time-series folds; we show the first two below.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_funs.html">folds_rolling_window</a></span><span class="op">(</span>
   <span class="va">t</span>,
   window_size <span class="op">=</span> <span class="fl">50</span>, validation_size <span class="op">=</span> <span class="fl">10</span>, gap <span class="op">=</span> <span class="fl">5</span>, batch <span class="op">=</span> <span class="fl">20</span>
@@ -1369,7 +1371,7 @@ package below using the function <code><a href="http://tlverse.org/origami/refer
 </div>
 <div id="rolling-origin-with-v-fold" class="section level4">
 <h4>
-<span class="header-section-number">3.5.2.3</span> Rolling origin with V-fold<a class="anchor" aria-label="anchor" href="#rolling-origin-with-v-fold"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2.3</span> Rolling origin with V-fold<a class="anchor" aria-label="anchor" href="#rolling-origin-with-v-fold"><i class="fas fa-link"></i></a>
 </h4>
 <p>A variant of rolling origin scheme which accounts for sample dependence is the
 rolling-origin-<span class="math inline">\(V\)</span>-fold cross-validation. In contrast to the canonical rolling
@@ -1383,13 +1385,13 @@ using the function <code><a href="http://tlverse.org/origami/reference/fold_funs
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="img/png/rolling_origin_v_fold.png" alt="Rolling origin V-fold CV" width="80%"><p class="caption">
-FIGURE 3.3: Rolling origin V-fold CV
+FIGURE 4.3: Rolling origin V-fold CV
 </p>
 </div>
 </div>
 <div id="rolling-window-with-v-fold" class="section level4">
 <h4>
-<span class="header-section-number">3.5.2.4</span> Rolling window with v-fold<a class="anchor" aria-label="anchor" href="#rolling-window-with-v-fold"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2.4</span> Rolling window with v-fold<a class="anchor" aria-label="anchor" href="#rolling-window-with-v-fold"><i class="fas fa-link"></i></a>
 </h4>
 <p>Analogous to the previous section, we can extend rolling window CV to support
 multiple time-series with arbitrary sample dependence. One can use the
@@ -1399,7 +1401,7 @@ function <code><a href="http://tlverse.org/origami/reference/fold_funs.html">fol
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="img/png/rolling_window_v_fold.png" alt="Rolling window V-fold CV" width="80%"><p class="caption">
-FIGURE 3.4: Rolling window V-fold CV
+FIGURE 4.4: Rolling window V-fold CV
 </p>
 </div>
 </div>
@@ -1407,7 +1409,7 @@ FIGURE 3.4: Rolling window V-fold CV
 </div>
 <div id="general-workflow-of-origami" class="section level2">
 <h2>
-<span class="header-section-number">3.6</span> General workflow of <code>origami</code><a class="anchor" aria-label="anchor" href="#general-workflow-of-origami"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6</span> General workflow of <code>origami</code><a class="anchor" aria-label="anchor" href="#general-workflow-of-origami"><i class="fas fa-link"></i></a>
 </h2>
 <p>Before we dive into more details, let’s take a moment to review some of the
 basic functionality in <code>origami</code> R package. The main function in the <code>origami</code>
@@ -1419,7 +1421,7 @@ action in later sections; for now, we provide specific details on each each step
 of this process below.</p>
 <div id="define-folds" class="section level3">
 <h3>
-<span class="header-section-number">3.6.1</span> (1) Define folds<a class="anchor" aria-label="anchor" href="#define-folds"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.1</span> (1) Define folds<a class="anchor" aria-label="anchor" href="#define-folds"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code>folds</code> object passed to <code>cross_validate</code> is a list of folds; such lists can
 be generated using the <code>make_folds</code> function. Each fold consists of a list with
@@ -1431,7 +1433,7 @@ all observations from the same independent unit together (<code>cluster</code>).
 </div>
 <div id="define-fold-function" class="section level3">
 <h3>
-<span class="header-section-number">3.6.2</span> (2) Define fold function<a class="anchor" aria-label="anchor" href="#define-fold-function"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.2</span> (2) Define fold function<a class="anchor" aria-label="anchor" href="#define-fold-function"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code>cv_fun</code> argument to <code>cross_validate</code> is a function that will perform some
 operation on each fold. The first argument to this function must be <code>fold</code>,
@@ -1447,7 +1449,7 @@ a named list of results containing whatever fold-specific outputs are generated.
 </div>
 <div id="apply-cross_validate" class="section level3">
 <h3>
-<span class="header-section-number">3.6.3</span> (3) Apply <code>cross_validate</code><a class="anchor" aria-label="anchor" href="#apply-cross_validate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.3</span> (3) Apply <code>cross_validate</code><a class="anchor" aria-label="anchor" href="#apply-cross_validate"><i class="fas fa-link"></i></a>
 </h3>
 <p>After defining folds, <code>cross_validate</code> can be used to map the <code>cv_fun</code> across
 the <code>folds</code> using <code>future_lapply</code>. This means that it can be easily parallelized
@@ -1467,7 +1469,7 @@ specifying a list of arguments to <code>.combine_control</code>.</p>
 </div>
 <div id="cross-validation-in-action" class="section level2">
 <h2>
-<span class="header-section-number">3.7</span> Cross-validation in action<a class="anchor" aria-label="anchor" href="#cross-validation-in-action"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7</span> Cross-validation in action<a class="anchor" aria-label="anchor" href="#cross-validation-in-action"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s see <code>origami</code> in action! In the following chapter we will learn how to use
 cross-validation with the Super Learner, and how we can utilize the power of
@@ -1475,7 +1477,7 @@ cross-validation to build optimal ensembles of algorithms, not just its use on a
 single statistical learning method.</p>
 <div id="cross-validation-with-linear-regression" class="section level3">
 <h3>
-<span class="header-section-number">3.7.1</span> Cross-validation with linear regression<a class="anchor" aria-label="anchor" href="#cross-validation-with-linear-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.1</span> Cross-validation with linear regression<a class="anchor" aria-label="anchor" href="#cross-validation-with-linear-regression"><i class="fas fa-link"></i></a>
 </h3>
 <p>First, we will load the relevant <code>R</code> packages, set a seed, and load the full
 WASH data once again. In order to illustrate cross-validation with <code>origami</code> and
@@ -1485,7 +1487,7 @@ assume the data is independent and identically distributed, ignoring the cluster
 structure imposed by the clinical trial design. For the sake of illustration, we
 will work with a subset of data, and remove all samples with missing data from
 the dataset; we will learn in the next chapter how to deal with missingness.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://stringr.tidyverse.org">stringr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
@@ -2116,7 +2118,7 @@ Severely Food Insecure
 </table></div>
 </div>
 <p>We can see the covariates used in the prediction:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">outcome</span>
 <span class="co">#&gt; [1] "whz"</span>
 <span class="va">covars</span>
@@ -2130,7 +2132,7 @@ Severely Food Insecure
 <p>Next, we fit a linear model on the full data, with the goal of predicting the
 weight-for-height Z-score <code>whz</code> using all of the available covariate data. Let’s
 try it out:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lm_mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">whz</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">washb_data</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lm_mod</span><span class="op">)</span>
 <span class="co">#&gt; </span>
@@ -2206,7 +2208,7 @@ try it out:</p>
 the linear model to the true outcomes observed in the data set. This is the well
 known (and standard) mean squared error. We can extract that from the <code>lm</code> model
 object as follows:</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">(</span><span class="va">err</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">lm_mod</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] 0.86568</span></code></pre></div>
 <p>The mean squared error is 0.86568. There is an important problem that arises
@@ -2225,7 +2227,7 @@ honest evaluation of the error.</p>
 <p>We can easily add cross-validation to our linear regression procedure using
 <code>origami</code>. First, let us define a new function to perform linear regression on a
 specific partition of the data (called a “fold”):</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cv_lm</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">fold</span>, <span class="va">data</span>, <span class="va">reg_form</span><span class="op">)</span> <span class="op">{</span>
   <span class="co"># get name and index of outcome variable from regression formula</span>
   <span class="va">out_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">reg_form</span>, <span class="st">" "</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>
@@ -2257,7 +2259,7 @@ set of partitions using <code>origami</code>’s <code>make_folds</code> functio
 function over the resultant <code>folds</code> object. Below, we replicate the
 re-substitution estimate of the error – we did this “by hand” above – using
 the functions <code>make_folds</code> and <code>cv_lm</code>.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># re-substitution estimate</span>
 <span class="va">resub</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/make_folds.html">make_folds</a></span><span class="op">(</span><span class="va">washb_data</span>, fold_fun <span class="op">=</span> <span class="va">folds_resubstitution</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="va">resub_results</span> <span class="op">&lt;-</span> <span class="fu">cv_lm</span><span class="op">(</span>fold <span class="op">=</span> <span class="va">resub</span>, data <span class="op">=</span> <span class="va">washb_data</span>, reg_form <span class="op">=</span> <span class="st">"whz ~ ."</span><span class="op">)</span>
@@ -2270,7 +2272,7 @@ subsets and evaluating on the subset that was held out for testing. This is
 repeated such that each subset is used for validation. We can easily apply our
 <code>cv_lm</code> function using <code>origami</code>’s <code>cross_validate</code> (n.b., by default this
 performs 10-fold cross-validation):</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># cross-validated estimate</span>
 <span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/make_folds.html">make_folds</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span>
 <span class="va">cvlm_results</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/cross_validate.html">cross_validate</a></span><span class="op">(</span>
@@ -2285,12 +2287,12 @@ estimate of the error is larger!</p>
 </div>
 <div id="cross-validation-with-random-forests" class="section level3">
 <h3>
-<span class="header-section-number">3.7.2</span> Cross-validation with random forests<a class="anchor" aria-label="anchor" href="#cross-validation-with-random-forests"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.2</span> Cross-validation with random forests<a class="anchor" aria-label="anchor" href="#cross-validation-with-random-forests"><i class="fas fa-link"></i></a>
 </h3>
 <p>To examine <code>origami</code> further, let us return to our example analysis using the
 WASH data set. Here, we will write a new <code>cv_fun</code> type object. As an example, we
 will use Breiman’s <code>randomForest</code> <span class="citation">(<span class="citeproc-not-found" data-reference-id="breiman2001random"><strong>???</strong></span>)</span>:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># make sure to load the package!</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.stat.berkeley.edu/~breiman/RandomForests/">randomForest</a></span><span class="op">)</span>
 
@@ -2321,11 +2323,11 @@ be written by hand; however, in future releases, a wrapper may be available to
 support auto-generating <code>cv_fun</code>s to be used with <code>origami</code>.</p>
 <p>Below, we use <code>cross_validate</code> to apply our new <code>cv_rf</code> function over the <code>folds</code>
 object generated by <code>make_folds</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># now, let's cross-validate...</span>
 <span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/make_folds.html">make_folds</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span>
 <span class="va">cvrf_results</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/cross_validate.html">cross_validate</a></span><span class="op">(</span>
-  cv_fun <span class="op">=</span> <span class="va">cv_rf</span>, folds <span class="op">=</span> <span class="va">folds</span>, 
+  cv_fun <span class="op">=</span> <span class="va">cv_rf</span>, folds <span class="op">=</span> <span class="va">folds</span>,
   data <span class="op">=</span> <span class="va">washb_data</span>, reg_form <span class="op">=</span> <span class="st">"whz ~ ."</span>,
   use_future <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
@@ -2338,7 +2340,7 @@ techniques, given availability of an appropriate <code>cv_fun</code> function.</
 </div>
 <div id="cross-validation-with-arima" class="section level3">
 <h3>
-<span class="header-section-number">3.7.3</span> Cross-validation with arima<a class="anchor" aria-label="anchor" href="#cross-validation-with-arima"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3</span> Cross-validation with arima<a class="anchor" aria-label="anchor" href="#cross-validation-with-arima"><i class="fas fa-link"></i></a>
 </h3>
 <p>Cross-validation can also be used for forecast model selection in a time series
 setting. Here, the partitioning scheme mirrors the application of the
@@ -2346,7 +2348,7 @@ forecasting model: we’ll train the data on past observations (either all
 available or a recent subset), and then use the model fit to predict the next
 few observations. We consider the <code>AirPassengers</code> dataset again, a monthly time
 series of passenger air traffic in thousands of people.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">AirPassengers</span><span class="op">)</span>
 <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/print.html">print</a></span><span class="op">(</span><span class="va">AirPassengers</span><span class="op">)</span>
 <span class="co">#&gt;      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span>
@@ -2365,7 +2367,7 @@ series of passenger air traffic in thousands of people.</p>
 <p>Suppose we want to pick between two forecasting models with different <code>arima</code>
 configurations. We can do that by evaluating their forecasting performance.
 First, we set up the appropriate cross-validation scheme for time-series.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/make_folds.html">make_folds</a></span><span class="op">(</span><span class="va">AirPassengers</span>,
   fold_fun <span class="op">=</span> <span class="va">folds_rolling_origin</span>,
   first_window <span class="op">=</span> <span class="fl">36</span>, validation_size <span class="op">=</span> <span class="fl">24</span>, batch <span class="op">=</span> <span class="fl">10</span>
@@ -2408,7 +2410,7 @@ folds to train! Luckily, we can pass the <code>batch</code> as option to
 <code>folds_rolling_origin</code> that tells it to increase the size of the training set by
 10 points each iteration. Since we want to forecast the immediate next point,
 <code>gap</code> argument remains the default (0).</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># make sure to load the package!</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://pkg.robjhyndman.com/forecast/">forecast</a></span><span class="op">)</span>
 
@@ -2473,11 +2475,11 @@ folds to train! Luckily, we can pass the <code>batch</code> as option to
 </div>
 <div id="exercises" class="section level2">
 <h2>
-<span class="header-section-number">3.8</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
 </h2>
 <div id="review-of-key-concepts" class="section level3">
 <h3>
-<span class="header-section-number">3.8.1</span> Review of Key Concepts<a class="anchor" aria-label="anchor" href="#review-of-key-concepts"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.1</span> Review of Key Concepts<a class="anchor" aria-label="anchor" href="#review-of-key-concepts"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Compare and contrast V-fold cross-validation with resubstitution
@@ -2497,7 +2499,7 @@ other.</p></li>
 </div>
 <div id="the-ideas-in-action" class="section level3">
 <h3>
-<span class="header-section-number">3.8.2</span> The Ideas in Action<a class="anchor" aria-label="anchor" href="#the-ideas-in-action"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.2</span> The Ideas in Action<a class="anchor" aria-label="anchor" href="#the-ideas-in-action"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(Y\)</span> be a binary variable with <span class="math inline">\(P(Y=1 \mid W) = 0.01\)</span>. What kind of
@@ -2510,7 +2512,7 @@ the <code>origami</code> package?</p></li>
 </div>
 <div id="advanced-topics" class="section level3">
 <h3>
-<span class="header-section-number">3.8.3</span> Advanced Topics<a class="anchor" aria-label="anchor" href="#advanced-topics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.3</span> Advanced Topics<a class="anchor" aria-label="anchor" href="#advanced-topics"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Think about a dataset with arbitrary spatial dependence, where we know
@@ -2541,54 +2543,54 @@ of the proposed algorithm.</li>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="intro.html"><span class="header-section-number">2</span> The Roadmap for Targeted Learning</a></div>
-<div class="next"><a href="sl3.html"><span class="header-section-number">4</span> Super (Machine) Learning</a></div>
+<div class="prev"><a href="data.html"><span class="header-section-number">3</span> The WASH Benefits Example Dataset</a></div>
+<div class="next"><a href="sl3.html"><span class="header-section-number">5</span> Super (Machine) Learning</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#origami"><span class="header-section-number">3</span> Cross-validation</a></li>
-<li><a class="nav-link" href="#learning-objectives-2">Learning Objectives</a></li>
-<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">3.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#origami"><span class="header-section-number">4</span> Cross-validation</a></li>
+<li><a class="nav-link" href="#learning-objectives-1">Learning Objectives</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">4.1</span> Introduction</a></li>
 <li>
-<a class="nav-link" href="#background"><span class="header-section-number">3.2</span> Background</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#introducing-cross-validation"><span class="header-section-number">3.2.1</span> Introducing: cross-validation</a></li></ul>
+<a class="nav-link" href="#background"><span class="header-section-number">4.2</span> Background</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#introducing-cross-validation"><span class="header-section-number">4.2.1</span> Introducing: cross-validation</a></li></ul>
 </li>
-<li><a class="nav-link" href="#estimation-roadmap-how-does-it-all-fit-together"><span class="header-section-number">3.3</span> Estimation Roadmap: how does it all fit together?</a></li>
-<li><a class="nav-link" href="#example-cross-validation-and-prediction"><span class="header-section-number">3.4</span> Example: cross-validation and prediction</a></li>
+<li><a class="nav-link" href="#estimation-roadmap-how-does-it-all-fit-together"><span class="header-section-number">4.3</span> Estimation Roadmap: how does it all fit together?</a></li>
+<li><a class="nav-link" href="#example-cross-validation-and-prediction"><span class="header-section-number">4.4</span> Example: cross-validation and prediction</a></li>
 <li>
-<a class="nav-link" href="#cross-validation-schemes-in-origami"><span class="header-section-number">3.5</span> Cross-validation schemes in origami</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#cross-validation-schemes-in-origami"><span class="header-section-number">4.5</span> Cross-validation schemes in origami</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#wash-benefits-study-example">WASH Benefits Study Example</a></li>
-<li><a class="nav-link" href="#cross-validation-for-i.i.d.-data"><span class="header-section-number">3.5.1</span> Cross-validation for i.i.d. data</a></li>
-<li><a class="nav-link" href="#cross-validation-for-dependent-data"><span class="header-section-number">3.5.2</span> Cross-validation for dependent data</a></li>
+<li><a class="nav-link" href="#cross-validation-for-i.i.d.-data"><span class="header-section-number">4.5.1</span> Cross-validation for i.i.d. data</a></li>
+<li><a class="nav-link" href="#cross-validation-for-dependent-data"><span class="header-section-number">4.5.2</span> Cross-validation for dependent data</a></li>
 <li><a class="nav-link" href="#airpassenger-example">AirPassenger Example</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#general-workflow-of-origami"><span class="header-section-number">3.6</span> General workflow of origami</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#define-folds"><span class="header-section-number">3.6.1</span> (1) Define folds</a></li>
-<li><a class="nav-link" href="#define-fold-function"><span class="header-section-number">3.6.2</span> (2) Define fold function</a></li>
-<li><a class="nav-link" href="#apply-cross_validate"><span class="header-section-number">3.6.3</span> (3) Apply cross_validate</a></li>
+<a class="nav-link" href="#general-workflow-of-origami"><span class="header-section-number">4.6</span> General workflow of origami</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#define-folds"><span class="header-section-number">4.6.1</span> (1) Define folds</a></li>
+<li><a class="nav-link" href="#define-fold-function"><span class="header-section-number">4.6.2</span> (2) Define fold function</a></li>
+<li><a class="nav-link" href="#apply-cross_validate"><span class="header-section-number">4.6.3</span> (3) Apply cross_validate</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#cross-validation-in-action"><span class="header-section-number">3.7</span> Cross-validation in action</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cross-validation-with-linear-regression"><span class="header-section-number">3.7.1</span> Cross-validation with linear regression</a></li>
-<li><a class="nav-link" href="#cross-validation-with-random-forests"><span class="header-section-number">3.7.2</span> Cross-validation with random forests</a></li>
-<li><a class="nav-link" href="#cross-validation-with-arima"><span class="header-section-number">3.7.3</span> Cross-validation with arima</a></li>
+<a class="nav-link" href="#cross-validation-in-action"><span class="header-section-number">4.7</span> Cross-validation in action</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cross-validation-with-linear-regression"><span class="header-section-number">4.7.1</span> Cross-validation with linear regression</a></li>
+<li><a class="nav-link" href="#cross-validation-with-random-forests"><span class="header-section-number">4.7.2</span> Cross-validation with random forests</a></li>
+<li><a class="nav-link" href="#cross-validation-with-arima"><span class="header-section-number">4.7.3</span> Cross-validation with arima</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#exercises"><span class="header-section-number">3.8</span> Exercises</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#review-of-key-concepts"><span class="header-section-number">3.8.1</span> Review of Key Concepts</a></li>
-<li><a class="nav-link" href="#the-ideas-in-action"><span class="header-section-number">3.8.2</span> The Ideas in Action</a></li>
-<li><a class="nav-link" href="#advanced-topics"><span class="header-section-number">3.8.3</span> Advanced Topics</a></li>
+<a class="nav-link" href="#exercises"><span class="header-section-number">4.8</span> Exercises</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#review-of-key-concepts"><span class="header-section-number">4.8.1</span> Review of Key Concepts</a></li>
+<li><a class="nav-link" href="#the-ideas-in-action"><span class="header-section-number">4.8.2</span> The Ideas in Action</a></li>
+<li><a class="nav-link" href="#advanced-topics"><span class="header-section-number">4.8.3</span> Advanced Topics</a></li>
 </ul>
 </li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/tlverse/tmlcimx2021-workshop/blob/master/04-origami.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/tlverse/tmlcimx2021-workshop/edit/master/04-origami.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/tlverse/tmlcimx2021-workshop/blob/master/05-origami.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/tlverse/tmlcimx2021-workshop/edit/master/05-origami.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -2600,7 +2602,7 @@ of the proposed algorithm.</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 10, 2021.</p>
+    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 11, 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

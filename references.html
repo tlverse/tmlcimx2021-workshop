@@ -18,8 +18,9 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9002/transition.js"></script><script src="libs/bs3compat-0.2.5.9002/tabs.js"></script><script src="libs/bs3compat-0.2.5.9002/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
-<script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
+<script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
 </head>
 <body>
 <span class="math inline">
@@ -58,11 +59,12 @@
 <li><a class="" href="motivation.html">Motivation</a></li>
 <li><a class="" href="tlverse.html"><span class="header-section-number">1</span> Welcome to the tlverse</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> The Roadmap for Targeted Learning</a></li>
-<li><a class="" href="origami.html"><span class="header-section-number">3</span> Cross-validation</a></li>
-<li><a class="" href="sl3.html"><span class="header-section-number">4</span> Super (Machine) Learning</a></li>
-<li><a class="" href="tmle3.html"><span class="header-section-number">5</span> The TMLE Framework</a></li>
-<li><a class="" href="r6.html"><span class="header-section-number">6</span> A Primer on the R6 Class System</a></li>
-<li><a class="" href="solutions.html"><span class="header-section-number">7</span> Exercise Solutions</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">3</span> The WASH Benefits Example Dataset</a></li>
+<li><a class="" href="origami.html"><span class="header-section-number">4</span> Cross-validation</a></li>
+<li><a class="" href="sl3.html"><span class="header-section-number">5</span> Super (Machine) Learning</a></li>
+<li><a class="" href="tmle3.html"><span class="header-section-number">6</span> The TMLE Framework</a></li>
+<li><a class="" href="r6.html"><span class="header-section-number">7</span> A Primer on the R6 Class System</a></li>
+<li><a class="" href="solutions.html"><span class="header-section-number">8</span> Exercise Solutions</a></li>
 <li><a class="active" href="references.html">References</a></li>
 </ul>
 
@@ -100,6 +102,9 @@
 <div id="ref-nosek2018preregistration">
 <p>Nosek, Brian A, Charles R Ebersole, Alexander C DeHaven, and David T Mellor. 2018. “The Preregistration Revolution.” <em>Proceedings of the National Academy of Sciences</em> 115 (11): 2600–2606.</p>
 </div>
+<div id="ref-pearl2009causality">
+<p>Pearl, Judea. 2009. <em>Causality: Models, Reasoning, and Inference</em>. Cambridge University Press.</p>
+</div>
 <div id="ref-peng2015reproducibility">
 <p>Peng, Roger. 2015. “The Reproducibility Crisis in Science: A Statistical Counterattack.” <em>Significance</em> 12 (3): 30–32.</p>
 </div>
@@ -108,6 +113,9 @@
 </div>
 <div id="ref-pullenayegum2016knowledge">
 <p>Pullenayegum, Eleanor M, Robert W Platt, Melanie Barwick, Brian M Feldman, Martin Offringa, and Lehana Thabane. 2016. “Knowledge Translation in Biostatistics: A Survey of Current Practices, Preferences, and Barriers to the Dissemination and Uptake of New Statistical Methods.” <em>Statistics in Medicine</em> 35 (6): 805–18.</p>
+</div>
+<div id="ref-rubin2005causal">
+<p>Rubin, Donald B. 2005. “Causal Inference Using Potential Outcomes: Design, Modeling, Decisions.” <em>Journal of the American Statistical Association</em> 100 (469): 322–31.</p>
 </div>
 <div id="ref-stark2018cargo">
 <p>Stark, Philip B, and Andrea Saltelli. 2018. “Cargo-Cult Statistics and Scientific Crisis.” <em>Significance</em> 15 (4): 40–43.</p>
@@ -139,7 +147,7 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="solutions.html"><span class="header-section-number">7</span> Exercise Solutions</a></div>
+<div class="prev"><a href="solutions.html"><span class="header-section-number">8</span> Exercise Solutions</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
@@ -160,7 +168,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 10, 2021.</p>
+    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 11, 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

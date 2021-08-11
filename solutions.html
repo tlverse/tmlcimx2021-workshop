@@ -4,22 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Exercise Solutions | Targeted Machine Learning with Big Data in the tlverse</title>
+<title>Chapter 8 Exercise Solutions | Targeted Machine Learning with Big Data in the tlverse</title>
 <meta name="author" content="Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips">
-<meta name="description" content="Here you will find solutions to the exercises. Note that there are many possible solutions to some of these questions.  7.1 The Roadmap Exercise Solutions   7.2 Cross-validation   7.3 Super...">
+<meta name="description" content="Here you will find solutions to the exercises. Note that there are many possible solutions to some of these questions.  8.1 The Roadmap Exercise Solutions   8.2 Cross-validation   8.3 Super...">
 <meta name="generator" content="bookdown 0.22.17 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Exercise Solutions | Targeted Machine Learning with Big Data in the tlverse">
+<meta property="og:title" content="Chapter 8 Exercise Solutions | Targeted Machine Learning with Big Data in the tlverse">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://tlverse.org/tmlcimx2021-workshop/solutions.html">
-<meta property="og:description" content="Here you will find solutions to the exercises. Note that there are many possible solutions to some of these questions.  7.1 The Roadmap Exercise Solutions   7.2 Cross-validation   7.3 Super...">
+<meta property="og:description" content="Here you will find solutions to the exercises. Note that there are many possible solutions to some of these questions.  8.1 The Roadmap Exercise Solutions   8.2 Cross-validation   8.3 Super...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Exercise Solutions | Targeted Machine Learning with Big Data in the tlverse">
-<meta name="twitter:description" content="Here you will find solutions to the exercises. Note that there are many possible solutions to some of these questions.  7.1 The Roadmap Exercise Solutions   7.2 Cross-validation   7.3 Super...">
+<meta name="twitter:title" content="Chapter 8 Exercise Solutions | Targeted Machine Learning with Big Data in the tlverse">
+<meta name="twitter:description" content="Here you will find solutions to the exercises. Note that there are many possible solutions to some of these questions.  8.1 The Roadmap Exercise Solutions   8.2 Cross-validation   8.3 Super...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9002/transition.js"></script><script src="libs/bs3compat-0.2.5.9002/tabs.js"></script><script src="libs/bs3compat-0.2.5.9002/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
-<script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script><link href="libs/vis-4.20.1/vis.css" rel="stylesheet">
+<script src="libs/vis-4.20.1/vis.min.js"></script><script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
 </head>
 <body>
 <span class="math inline">
@@ -58,11 +59,12 @@
 <li><a class="" href="motivation.html">Motivation</a></li>
 <li><a class="" href="tlverse.html"><span class="header-section-number">1</span> Welcome to the tlverse</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> The Roadmap for Targeted Learning</a></li>
-<li><a class="" href="origami.html"><span class="header-section-number">3</span> Cross-validation</a></li>
-<li><a class="" href="sl3.html"><span class="header-section-number">4</span> Super (Machine) Learning</a></li>
-<li><a class="" href="tmle3.html"><span class="header-section-number">5</span> The TMLE Framework</a></li>
-<li><a class="" href="r6.html"><span class="header-section-number">6</span> A Primer on the R6 Class System</a></li>
-<li><a class="active" href="solutions.html"><span class="header-section-number">7</span> Exercise Solutions</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">3</span> The WASH Benefits Example Dataset</a></li>
+<li><a class="" href="origami.html"><span class="header-section-number">4</span> Cross-validation</a></li>
+<li><a class="" href="sl3.html"><span class="header-section-number">5</span> Super (Machine) Learning</a></li>
+<li><a class="" href="tmle3.html"><span class="header-section-number">6</span> The TMLE Framework</a></li>
+<li><a class="" href="r6.html"><span class="header-section-number">7</span> A Primer on the R6 Class System</a></li>
+<li><a class="active" href="solutions.html"><span class="header-section-number">8</span> Exercise Solutions</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -73,13 +75,13 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="solutions" class="section level1">
 <h1>
-<span class="header-section-number">7</span> Exercise Solutions<a class="anchor" aria-label="anchor" href="#solutions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8</span> Exercise Solutions<a class="anchor" aria-label="anchor" href="#solutions"><i class="fas fa-link"></i></a>
 </h1>
 <p>Here you will find solutions to the exercises. Note that there are many possible
 solutions to some of these questions.</p>
 <div id="solutions-roadmap" class="section level2">
 <h2>
-<span class="header-section-number">7.1</span> The Roadmap Exercise Solutions<a class="anchor" aria-label="anchor" href="#solutions-roadmap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> The Roadmap Exercise Solutions<a class="anchor" aria-label="anchor" href="#solutions-roadmap"><i class="fas fa-link"></i></a>
 </h2>
 <!--
 Potential solutions to the [Roadmap Exercises](#roadmap-exercises) are listed 
@@ -110,12 +112,12 @@ below.
 </div>
 <div id="solutions-cv" class="section level2">
 <h2>
-<span class="header-section-number">7.2</span> Cross-validation<a class="anchor" aria-label="anchor" href="#solutions-cv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> Cross-validation<a class="anchor" aria-label="anchor" href="#solutions-cv"><i class="fas fa-link"></i></a>
 </h2>
 </div>
 <div id="solutions-sl" class="section level2">
 <h2>
-<span class="header-section-number">7.3</span> Super Learning Exercise Solutions<a class="anchor" aria-label="anchor" href="#solutions-sl"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3</span> Super Learning Exercise Solutions<a class="anchor" aria-label="anchor" href="#solutions-sl"><i class="fas fa-link"></i></a>
 </h2>
 <!--
 ### Exercise 1 Solution {#sl3ex1-sol}
@@ -134,7 +136,6 @@ db_data <- url(
   "https://raw.githubusercontent.com/benkeser/sllecture/master/chspred.csv"
 )
 chspred <- read_csv(file = db_data, col_names = TRUE)
-
 ```
 
 1. Create an `sl3` task, setting myocardial infarction `mi` as the outcome and
@@ -218,22 +219,22 @@ varimp %>%
 </div>
 <div id="solutions-tmle" class="section level2">
 <h2>
-<span class="header-section-number">7.4</span> TMLE<a class="anchor" aria-label="anchor" href="#solutions-tmle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4</span> TMLE<a class="anchor" aria-label="anchor" href="#solutions-tmle"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="r6.html"><span class="header-section-number">6</span> A Primer on the R6 Class System</a></div>
+<div class="prev"><a href="r6.html"><span class="header-section-number">7</span> A Primer on the R6 Class System</a></div>
 <div class="next"><a href="references.html">References</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#solutions"><span class="header-section-number">7</span> Exercise Solutions</a></li>
-<li><a class="nav-link" href="#solutions-roadmap"><span class="header-section-number">7.1</span> The Roadmap Exercise Solutions</a></li>
-<li><a class="nav-link" href="#solutions-cv"><span class="header-section-number">7.2</span> Cross-validation</a></li>
-<li><a class="nav-link" href="#solutions-sl"><span class="header-section-number">7.3</span> Super Learning Exercise Solutions</a></li>
-<li><a class="nav-link" href="#solutions-tmle"><span class="header-section-number">7.4</span> TMLE</a></li>
+<li><a class="nav-link" href="#solutions"><span class="header-section-number">8</span> Exercise Solutions</a></li>
+<li><a class="nav-link" href="#solutions-roadmap"><span class="header-section-number">8.1</span> The Roadmap Exercise Solutions</a></li>
+<li><a class="nav-link" href="#solutions-cv"><span class="header-section-number">8.2</span> Cross-validation</a></li>
+<li><a class="nav-link" href="#solutions-sl"><span class="header-section-number">8.3</span> Super Learning Exercise Solutions</a></li>
+<li><a class="nav-link" href="#solutions-tmle"><span class="header-section-number">8.4</span> TMLE</a></li>
 </ul>
 
       <div class="book-extra">
@@ -251,7 +252,7 @@ varimp %>%
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 10, 2021.</p>
+    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 11, 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

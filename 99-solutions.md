@@ -52,7 +52,6 @@ db_data <- url(
   "https://raw.githubusercontent.com/benkeser/sllecture/master/chspred.csv"
 )
 chspred <- read_csv(file = db_data, col_names = TRUE)
-
 ```
 
 1. Create an `sl3` task, setting myocardial infarction `mi` as the outcome and

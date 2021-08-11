@@ -1,13 +1,5 @@
 # Welcome to the `tlverse` {#tlverse}
 
-## Learning Objectives
-
-1. Understand the `tlverse` ecosystem conceptually
-2. Identify the core components of the `tlverse`
-3. Install `tlverse` `R` packages
-4. Understand the Targeted Learning roadmap
-5. Learn about the WASH Benefits example data
-
 ## What is the `tlverse`?
 
 The `tlverse` is a new framework for doing Targeted Learning in R, inspired by
@@ -78,59 +70,3 @@ above. There are currently two featured examples of this:
     effects of continuous treatment represents a powerful extension of the
     Targeted Learning approach.
 
-## Installation {#installtlverse}
-
-The `tlverse` ecosystem of packages are currently hosted at
-https://github.com/tlverse, not yet on [CRAN](http://cran.r-project.org/). You
-can use the `devtools` package to install them:
-
-
-```r
-install.packages("devtools")
-devtools::install_github("tlverse/tlverse")
-```
-
-The `tlverse` depends on a large number of other packages that are also hosted
-on GitHub. Because of this, you may see the following error:
-
-```
-Error: HTTP error 403.
-  API rate limit exceeded for 71.204.135.82. (But here's the good news:
-  Authenticated requests get a higher rate limit. Check out the documentation
-  for more details.)
-
-  Rate limit remaining: 0/60
-  Rate limit reset at: 2019-03-04 19:39:05 UTC
-
-  To increase your GitHub API rate limit
-  - Use `usethis::browse_github_pat()` to create a Personal Access Token.
-  - Use `usethis::edit_r_environ()` and add the token as `GITHUB_PAT`.
-```
-
-This just means that R tried to install too many packages from GitHub in too
-short of a window. To fix this, you need to tell R how to use GitHub as your
-user (you'll need a GitHub user account). Follow these two steps:
-
-1. Type `usethis::browse_github_pat()` in your R console, which will direct
-   you to GitHub's page to create a New Personal Access Token.
-2. Create a Personal Access Token simply by clicking "Generate token" at the
-   bottom of the page.
-3. Copy your Personal Access Token, a long string of lowercase letters and
-   numbers.
-4. Type `usethis::edit_r_environ()` in your R console, which will open your
-   `.Renviron` file in the source window of RStudio. If you are not able to 
-   access your `.Renviron` file with this command, then try inputting
-   `Sys.setenv(GITHUB_PAT = )` with your Personal Access Token inserted as a 
-   string after the equals symbol; and if this does not error, then skip to 
-   step 8. 
-5. In your `.Renviron` file, type `GITHUB_PAT=` and then paste your Personal
-   Access Token after the equals symbol with no space.
-6. In your `.Renviron` file, press the enter key to ensure that your `.Renviron`
-   ends with a newline.
-7. Save your `.Renviron` file.
-8. Restart R for changes to take effect. You can restart R via the drop-down
-   menu on the "Session" tab. The "Session" tab is at the top of the RStudio
-   interface.
-
-After following these steps, you should be able to successfully install the
-package which threw the error above.

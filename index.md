@@ -5,7 +5,7 @@ subtitle: "A Short Course for the Public Health and Epidemiology Program (PASPE)
  at the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: August 10, 2021"
+date: "updated: August 11, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -29,16 +29,16 @@ description: "Open source and reproducible teaching materials accompanying an
 
 # Information {-}
 
-This open source, reproducible vignette is for a four-day workshop on use of the 
-Targeted Learning framework for statistical and causal inference with machine 
-learning in modern "Big Data" applications. Beyond introducing Targeted 
+This open source, reproducible vignette is for a four-day short course on use of 
+the Targeted Learning framework for statistical and causal inference with
+machine learning in modern "Big Data" applications. Beyond introducing Targeted 
 Learning, this course focuses on applying the methodology in practice
-using the [`tlverse` software ecosystem](https://github.com/tlverse).  These
+using the [`tlverse` software ecosystem](https://github.com/tlverse). These
 materials are based on a working draft of the book [*Targeted Learning in `R`:
 Causal Data Science with the `tlverse` Software
 Ecosystem*](https://tlverse.org/tlverse-handbook/), which includes in-depth
 discussion of these topics and much more, and will serve as a useful reference 
-to accompany these workshop materials.
+to accompany these short course materials.
 
 <img style="float: center; margin-right: 1%; margin-bottom: 0.01em"
      src="img/logos/tlverse-logo.svg" width="30%" height="30%">
@@ -51,21 +51,23 @@ to accompany these workshop materials.
 
 ## Preliminaries {-}
 
-All students in this workshop will work with the software on their machines, and 
-learn how to use these tools in practice. With that in mind, we request all 
-students **complete steps 1 and 2 the week/weekend before the workshop**.
+All students in this short course will work with the software on their machines
+and learn how to use these tools in practice. With that in mind, we request all 
+students **complete steps 1 and 2 the week/weekend before the short course**.
 
-1. Join the Slack page dedicated to this workshop. Here is the invitation link 
-   to join: https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
+1. Join the Slack page dedicated to this short course. Here is the invitation 
+   link to join: https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 2. Download the necessary software (instructions below). If you are experiencing 
    installation issues, please reach out on the Slack “#install” channel at 
-   least a few days before the workshop.
+   least a few days before the short course.
 
 Software Download Information:
 
-* Some of the `R` packages we are working with at the workshop (e.g. glmnet) 
-  require `R` version 4.0 or greater. Links to install/update `R` can be found 
-  at https://cloud.r-project.org. 
+* Some of the `R` packages we are working with at the short course (e.g., 
+  glmnet) require `R` version 4.0 or greater. Links to install/update `R` can 
+  be found at https://cloud.r-project.org. We also provide instructions for 
+  installing `R` and RStudio below in [Setup 
+  instructions](https://tlverse.org/tmlcimx2021-workshop/#setup).
 * After updating `R` to version 4.0 or greater, this script should safely cover 
   all package installations: 
   https://github.com/tlverse/tmlcimx2021-workshop/blob/master/install.R.
@@ -78,9 +80,9 @@ Software Download Information:
 We can help with these installation issues and others on Slack’s #install 
 channel.
 
-## About this workshop {-}
+## About this short course {-}
 
-This workshop will provide a comprehensive introduction to the field of 
+This short course will provide a comprehensive introduction to the field of 
 Targeted Learning for causal inference, and the corresponding ["tlverse" 
 software ecosystem](https://github.com/tlverse). Targeted Learning is a general 
 statistical approach which unifies advances in causal inference, statistical 
@@ -89,13 +91,13 @@ statistical analysis plans. Emphasis will be placed on efficient targeted
 estimators of causal effects of a variety of interventions (personalized, 
 treatment versus control, shifting exposures).  
 
-In addition to discussion, this workshop will incorporate interactive 
+In addition to discussion, this short course will incorporate interactive 
 activities and programming exercises in the `R` language with public health 
 data. After this course, students will be able to use these free tools to 
 answer scientifically meaningful questions in public health, medicine, 
 economics, and more.
 
-After completing this workshop, students will be able to:
+After completing this short course, students will be able to:
 
 1. Follow the roadmap of targeted learning to translate meaningful research 
    questions into realistic statistical estimation problems, and obtain valid 
@@ -185,8 +187,8 @@ After completing this workshop, students will be able to:
   The link to join Slack is 
   https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 
-* __Code__: `R` scripts for each section of the workshop are available via the 
-  GitHub repository for the workshop at
+* __Code__: `R` scripts for each section of the short course are available via 
+  the GitHub repository for the short course at
   https://github.com/tlverse/tmlcimx2021-workshop/tree/master/R_code.
 
 * __Course website__: This is the main course website where we will be working 
@@ -196,7 +198,7 @@ After completing this workshop, students will be able to:
   of the book [*Targeted Learning in `R`: Causal Data Science with the `tlverse` 
   Software Ecosystem*](https://tlverse.org/tlverse-handbook/), which includes 
   in-depth discussion of these topics and much more, and will serve as a useful 
-  reference to accompany these workshop materials.
+  reference to accompany these short course materials.
   
 <!--
 __NOTE: All listings are in Pacific Time.__
@@ -280,51 +282,9 @@ online learning from data streams of vital signs, human-computer interaction,
 automated machine learning, and developing statistical analysis plans using 
 targeted learning.
 
-## Reproduciblity with the `tlverse` {#repro}
+## Setup instructions {-} 
 
-The `tlverse` software ecosystem is a growing collection of packages, several of
-which are quite early on in the software lifecycle. The team does its best to
-maintain backwards compatibility. Once this work reaches completion, the
-specific versions of the `tlverse` packages used will be archived and tagged to
-produce it.
-
-This book was written using [bookdown](http://bookdown.org/), and the complete
-source is available on [GitHub](https://github.com/tlverse/tlverse-handbook).
-This version of the book was built with R version 4.1.1 (2021-08-10),
-[pandoc](https://pandoc.org/) version 2.7.3, and the
-following packages:
-
-
-|package    |version    |source                             |
-|:----------|:----------|:----------------------------------|
-|bookdown   |0.22.17    |Github (rstudio/bookdown\@a3de608) |
-|bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
-|data.table |1.14.0     |CRAN (R 4.1.0)                     |
-|delayed    |0.3.0      |CRAN (R 4.1.0)                     |
-|devtools   |2.4.2      |CRAN (R 4.1.0)                     |
-|downlit    |0.2.1      |CRAN (R 4.1.0)                     |
-|dplyr      |1.0.7      |CRAN (R 4.1.0)                     |
-|forecast   |8.15       |CRAN (R 4.1.0)                     |
-|ggfortify  |0.4.12     |CRAN (R 4.1.0)                     |
-|ggplot2    |3.3.5      |CRAN (R 4.1.0)                     |
-|here       |1.0.1      |CRAN (R 4.1.0)                     |
-|kableExtra |1.3.4      |CRAN (R 4.1.0)                     |
-|knitr      |1.33       |CRAN (R 4.1.0)                     |
-|mvtnorm    |1.1-2      |CRAN (R 4.1.0)                     |
-|origami    |1.0.3      |CRAN (R 4.1.0)                     |
-|readr      |2.0.1      |CRAN (R 4.1.1)                     |
-|rmarkdown  |2.10       |CRAN (R 4.1.1)                     |
-|skimr      |2.1.3      |CRAN (R 4.1.0)                     |
-|sl3        |1.4.3      |Github (tlverse/sl3\@aeeb7e9)      |
-|stringr    |1.4.0      |CRAN (R 4.1.0)                     |
-|tibble     |3.1.3      |CRAN (R 4.1.0)                     |
-|tidyr      |1.1.3      |CRAN (R 4.1.0)                     |
-|tidyverse  |1.3.1      |CRAN (R 4.1.0)                     |
-|tmle3      |0.2.0      |Github (tlverse/tmle3\@425e21c)    |
-
-## Setup instructions {#setup}
-
-### R and RStudio
+### R and RStudio {-}
 
 **R** and **RStudio** are separate downloads and installations. R is the
 underlying statistical computing environment. RStudio is a graphical integrated
@@ -408,3 +368,47 @@ interactive. You need to install R before you install RStudio.
 These setup instructions are adapted from those written for [Data Carpentry: R
 for Data Analysis and Visualization of Ecological
 Data](http://www.datacarpentry.org/R-ecology-lesson/).
+
+## Reproduciblity with the `tlverse` {-}
+
+The `tlverse` software ecosystem is a growing collection of packages, several of
+which are quite early on in the software lifecycle. The team does its best to
+maintain backwards compatibility. Once this work reaches completion, the
+specific versions of the `tlverse` packages used will be archived and tagged to
+produce it.
+
+This book was written using [bookdown](http://bookdown.org/), and the complete
+source is available on [GitHub](https://github.com/tlverse/tlverse-handbook).
+This version of the book was built with R version 4.1.1 (2021-08-10),
+[pandoc](https://pandoc.org/) version 2.7.3, and the
+following packages:
+
+
+|package    |version    |source                             |
+|:----------|:----------|:----------------------------------|
+|bookdown   |0.22.17    |Github (rstudio/bookdown\@928468e) |
+|bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
+|daggity    |NA         |NA                                 |
+|data.table |1.14.0     |CRAN (R 4.1.0)                     |
+|delayed    |0.3.0      |CRAN (R 4.1.0)                     |
+|devtools   |2.4.2      |CRAN (R 4.1.0)                     |
+|downlit    |0.2.1      |CRAN (R 4.1.0)                     |
+|dplyr      |1.0.7      |CRAN (R 4.1.0)                     |
+|forecast   |8.15       |CRAN (R 4.1.0)                     |
+|ggdag      |0.2.3      |CRAN (R 4.1.1)                     |
+|ggfortify  |0.4.12     |CRAN (R 4.1.0)                     |
+|ggplot2    |3.3.5      |CRAN (R 4.1.0)                     |
+|here       |1.0.1      |CRAN (R 4.1.0)                     |
+|kableExtra |1.3.4      |CRAN (R 4.1.0)                     |
+|knitr      |1.33       |CRAN (R 4.1.0)                     |
+|mvtnorm    |1.1-2      |CRAN (R 4.1.0)                     |
+|origami    |1.0.3      |CRAN (R 4.1.0)                     |
+|readr      |2.0.1      |CRAN (R 4.1.1)                     |
+|rmarkdown  |2.10       |CRAN (R 4.1.1)                     |
+|skimr      |2.1.3      |CRAN (R 4.1.0)                     |
+|sl3        |1.4.3      |Github (tlverse/sl3\@aeeb7e9)      |
+|stringr    |1.4.0      |CRAN (R 4.1.0)                     |
+|tibble     |3.1.3      |CRAN (R 4.1.0)                     |
+|tidyr      |1.1.3      |CRAN (R 4.1.0)                     |
+|tidyverse  |1.3.1      |CRAN (R 4.1.0)                     |
+|tmle3      |0.2.0      |Github (tlverse/tmle3\@425e21c)    |
