@@ -11,15 +11,15 @@ Updated: `r Sys.Date()`
 
 By the end of this lesson you will be able to: 
 
-- Ensemble a combination of algorithms into an improved "Super Learner" 
+- Ensemble a combination of algorithms into an improved "super learner" 
   algorithm using the `sl3` `R` package, and explain why this combination is 
   better than selecting a single algorithm to colleagues.
 
 ## Motivation {-}
 
-- A common task in data analysis is prediction -- using the observed data (input 
-  variables and outcomes) to learn a function that can map new input variables 
-  into a predicted outcome.
+- A common task in data analysis is prediction --- using the observed data 
+  (input variables and outcomes) to learn a function that can map new input 
+  variables into a predicted outcome.
   <!--
   Oftentimes, the scientific question of interest translates to a statistical
   question that requires (causal) effect estimation. Even in these scenarios,
@@ -31,14 +31,14 @@ By the end of this lesson you will be able to:
   regression models might fit the data quite well. 
 - It is generally impossible to know a priori which algorithm will be the best 
   for a given data set and prediction problem. 
-- The Super Learner solves this issue of algorithm selection by creating an
+- The super learner solves this issue of algorithm selection by creating an
   ensemble of many algorithms, from the simplest (intercept-only) to most 
   complex (neural nets, tree-based methods, support vector machines, etc.).
-- Super Learner works by using cross-validation in a manner that theoretically
+- Super learner works by using cross-validation in a manner that theoretically
   (in large samples) guarantees the resulting fit will be as good as possible, 
   given the algorithms provided.
 
-## Introduction {-}
+## Introduction 
 
 In [Chapter 1](#intro), we introduced the [_Roadmap for Targeted
 Learning_](#roadmap) as a general template to translate real-world data
@@ -51,23 +51,26 @@ this roadmap define the *statistical estimation problem*, which establish
    data-generating process (DGP) and also the data-generating distribution 
    (DGD). The data structure $O$ is comprised of variables, such as a 
    vector of covariates $W$, a treatment or exposure $A$, and an outcome $Y$, 
-   $O=(W,A,Y) \sim P_0$. We often observe the random variable $O$ $n$ times, by 
-   repeating the common experiment $n$ times. For example, $O_1,\ldots, O_n$ 
+   $O=(W,A,Y) \sim P_0$. The observation $O$ represents a *random variable*; 
+   when we repeat the common experiment $n$ times, we "realize" this random 
+   variable $O$ a total of $n$ times. For example, $O_1,\ldots, O_n$ 
    random variables could be the result of a random sample of $n$ subjects from 
-   a population, collecting baseline characteristics $W$, randomly assigning 
-   treatment $A$, and then later measuring an outcome $Y$. 
+   a population, where we collect/realize/observe/measure the following 
+   variables: baseline characteristics $W$, treatment $A$ (and let's pretend 
+   treatment was assigned based on a subset of $W$, say age and sex), and a 
+   post-treatment outcome $Y$.
 2. **A statistical model $\M$ as a set of possible probability distributions** 
    **that could have given rise to the data.** It's essential for $\M$ to only 
-   constrained by factual subject-matter knowledge in order to guarantee $P_0$ 
+   constrained by factual, subject-matter knowledge in order to guarantee $P_0$ 
    resides in the statistical model, written $P_0 \in \M$. Continuing 
    the example from step 1, the following restrictions could be placed on the 
    statistical model: the $O_1, \ldots, O_n$ observations in the data are 
-   independent and identically distributed (i.i.d.), the assignment of 
-   treatment $A$ was random and not based on covariates $W$. 
+   *independent and identically distributed* (i.i.d.), and the assignment of 
+   treatment $A$ depended on a subset of $W$ variables: age and sex. 
 3. **A translation of the scientific question of interest into a function of** 
    **$P_0$, the target statistical estimand $\Psi(P_0)$.** For example, we might 
    be interested in the average difference in mean outcomes under treatment 
-   $A=1$ versus placebo $A=0$: 
+   $A=1$ versus placebo $A=0$ --- 
    $\Psi(P_0)=E_{P_0}\Big[E_{P_0}(Y|A=1,W)−E_{P_0}(Y|A=0,W)\Big]$. Note 
    that, if the scientific question is causal, then it's translation will 
    produce a target *causal* estimand; another layer of translation, 
@@ -80,10 +83,10 @@ so-called "identifiability" of this estimand from the observed data. See [causal
 target parameters](#causal) for more detail on causal models and identifiability.
 
 After finalizing steps 1--3 above, the estimation procedure can be specified. 
-We advocate for the use of the Super Learner (SL) algorithm in the estimation 
+We advocate for the use of the super learner (SL) algorithm in the estimation 
 procedure it is flexible and grounded in optimality theory [@vdl2007super].  
 
-### Why use the Super Learner? {-}
+### Why use the super learner? {-}
 
 - It offers a system for combining/ensembling many machine learning (ML) 
   algorithms into an improved ML algorithm. 
@@ -101,7 +104,7 @@ the relative mean squared error and the target estimand that was being estimated
 for all datasets was the conditional mean outcome, given covariates 
 [@polley2010super].
 
-### General Overview of the Algorithm
+### General overview of the super learner algorithm
 
 - SL uses cross-validation and an objective function (e.g., loss function) to 
   optimize the fit of the target parameter, based on a weighted combination of a 
@@ -124,23 +127,23 @@ for all datasets was the conditional mean outcome, given covariates
 ```{r cv_fig, fig.show="hold", echo = FALSE}
 knitr::include_graphics("img/png/vs.png")
 ```
-The figure above shows an example of $V$-fold cross-validation with $V=10$
-folds, and this is the default cross-validation structure in the `sl3` `R` 
+The figure above shows an example of $V$-fold cross-validation with $V=10$ folds, 
+and this is the default cross-validation structure in the `sl3` `R` 
 package. The darker boxes represent the so-called "validation data" and the 
 lighter boxes represent the so-called "training data". The following details 
 are important to notice: 
 
-- Across all folds, there are $V$ (10) copies of the dataset. The only 
-  difference between each copy is the coloring, which distinguishes the subset 
-  of the data that's considered as the training data from the subset that's 
-  considered as the validation data. 
-- Within each fold 1/$V$ (1/10) of the data is the validation data.
+- Across all folds, there are $V$ copies of the dataset. The only difference 
+  between each copy is the coloring, which distinguishes the subset of the data 
+  that's considered as the training data from the subset that's considered as 
+  the validation data. 
+- Within each fold $1/V$ of the data is the validation data.
 - Across all folds, all of the data will be considered as validation data and 
   no observation will be included twice as validation data. Therefore, the 
   total number of validation data observations across all of the folds is 
   equal to the total number of observations in the data.
   
-#### Step-by-step procedure with V-fold cross-validation
+#### Procedure with V-fold cross-validation
 
 1. Fit each learner (say there are $K$ learners) on the whole dataset. We refer
    to these learners that are trained on the whole dataset as "full-fit" 
@@ -173,7 +176,7 @@ are important to notice:
    outcomes from new input data; that is, new $K$ learners predictions' can be 
    supplied to the fitted metalearner in order to obtain predicted outcomes.
 6. The fitted metalearner and the full-fit learners define the weighted 
-   combination of the $K$ learners, finalizing the Super Learner (SL) fit. To 
+   combination of the $K$ learners, finalizing the super learner (SL) fit. To 
    obtain SL predictions the full-fit learners' predictions are first obtained 
    and then fed as input to the fitted metalearner; the metalearner's output 
    is the SL predictions. 
@@ -193,8 +196,9 @@ knitr::include_graphics("img/png/SLKaiserNew.png")
   algorithms involving screening covariates, penalizations, optimizing tuning
   parameters, etc.
   
-#### Theoretical Foundations
-For more detail on Super Learner algorithm we refer the reader to 
+### Theoretical foundations
+
+For more detail on super learner algorithm we refer the reader to 
 @polley2010super and @vdl2007super. The optimality results for the 
 cross-validation selector among a family of algorithms were established in 
 @vdl2003unified and extended in @vaart2006oracle.
@@ -324,7 +328,7 @@ For more detail on Super Learner we refer the reader to @vdl2007super and
 among a family of algorithms were established in @vdl2003unified and extended
 in @vaart2006oracle.
 -->
-## `sl3` "Microwave Dinner" Implementation {-}
+## `sl3` "Microwave Dinner" Implementation
 
 We begin by illustrating the core functionality of the SL algorithm as
 implemented in `sl3`.
@@ -451,10 +455,10 @@ need to press tab twice if you're not in RStudio), you can view all of the
 active and public fields and methods that can be accessed from the `washb_task`
 object.
 
-### 2. Make a Super Learner {-}
+### 2. Make a super learner {-}
 
 Now that we have defined our machine learning problem with the `sl3_Task`, we
-are ready to make the Super Learner (SL). This requires specification of
+are ready to make the super learner (SL). This requires specification of
 
 * A set of candidate machine learning algorithms, also commonly referred to as
   a library of learners. The set should include a diversity of algorithms
@@ -627,7 +631,7 @@ cv_stack <- Lrnr_cv$new(stack)
 cv_stack
 ```
 
-#### Screening Algorithms for Feature Selection {-}
+#### Screening algorithms for feature selection {-}
 
 We can optionally select a subset of available covariates and pass only
 those variables to the modeling algorithm. The current set of learners that
@@ -658,7 +662,7 @@ importance ranking (ordered by mean decrease in accuracy). To select the top
 `Lrnr_screener_importance` with `Lrnr_ranger` (limiting the number of trees by
 setting `ntree = 20`).
 
-Hang on! Before you think it -- we will confess: Bob Ross and us both know that 
+Hang on! Before you think it --- we will confess: Bob Ross and us both know that 
 20 trees makes for a lonely forest, and we shouldn't consider it, but these are 
 the sacrifices we make for this chapter to be built in time!
 
@@ -777,7 +781,7 @@ plot(dt_sl, color = FALSE, height = "400px", width = "90%")
 ```
 --->
 
-### 3. Train the Super Learner on the machine learning task {-}
+### 3. Train the super learner on the machine learning task {-}
 
 The SL algorithm fits a metalearner on the validation-set predictions in a
 cross-validated manner, thereby avoiding overfitting.
@@ -824,7 +828,7 @@ We can also obtain a summary of the results.
 sl_fit$cv_risk(loss_fun = loss_squared_error)
 ```
 
-## Cross-validated Super Learner {-}
+## Cross-validated super learner
 
 We can cross-validate the SL to see how well the SL performs on unseen data, and
 obtain an estimate of the cross-validated risk of the SL.
@@ -857,7 +861,7 @@ CVsl %>%
 ```
 <!-- Explain summary!!!! -->
 
-## Variable Importance Measures with `sl3` {-}
+## Variable importance measures with `sl3`
 
 Variable importance can be interesting and informative. It can also be
 contradictory and confusing. Nevertheless, we like it, and so do our
@@ -897,7 +901,8 @@ washb_varimp %>%
 # plot variable importance
 importance_plot(
   washb_varimp,
-  main = "sl3 Variable Importance for WASH Benefits Example Data"
+  main = "sl3 Variable Importance for WASH Benefits Example Data",
+  nvar = 15
 )
 ```
 <!-- Explain summary!!!! -->
@@ -935,7 +940,7 @@ head(chspred) %>%
    presented above.
 3. Incorporate at least one pipeline with feature selection. Any screener and
    learner(s) can be used.
-4. With the default metalearner and base learners, make the Super Learner (SL) 
+4. With the default metalearner and base learners, make the super learner (SL) 
    and train it on the task.
 5. Print your SL fit by calling `print()` with `$`.
 6. Cross-validate your SL fit to see how well it performs on unseen
@@ -1078,7 +1083,7 @@ validation sample is $P_{n,B_n}^1$.
 
 ## Concluding Remarks
 
-- Super Learner (SL) is a general approach that can be applied to a diversity of
+- Super learner (SL) is a general approach that can be applied to a diversity of
   estimation and prediction problems which can be defined by a loss function.
 
 - It would be straightforward to plug in the estimator returned by SL into the
@@ -1119,7 +1124,7 @@ validation sample is $P_{n,B_n}^1$.
   SL is an essential step to help us get there. In fact, we will use the 
   counterfactual predicted outcomes that were explained at length above. 
   However, SL might not be not the end of the estimation procedure. 
-  Plugging in the Super Learner in the target parameter representation would 
+  Plugging in the super learner in the target parameter representation would 
   generally not result in an asymptotically linear estimator of the target 
   estimand. This begs the question, why is it important for an estimator to 
   possess these properties?
