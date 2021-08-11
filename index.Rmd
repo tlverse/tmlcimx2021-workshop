@@ -55,8 +55,8 @@ All students in this short course will work with the software on their machines
 and learn how to use these tools in practice. With that in mind, we request all 
 students **complete steps 1 and 2 the week/weekend before the short course**.
 
-1. Join the Slack page dedicated to this short course. Here is the invitation link 
-   to join: https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
+1. Join the Slack page dedicated to this short course. Here is the invitation 
+   link to join: https://join.slack.com/t/paspe2021tlverse/shared_invite/zt-u4893l2d-n3jzgMvbBcllhpRrhqYNCg.
 2. Download the necessary software (instructions below). If you are experiencing 
    installation issues, please reach out on the Slack “#install” channel at 
    least a few days before the short course.
