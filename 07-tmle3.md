@@ -97,7 +97,7 @@ Wald-style confidence intervals.
 ### TMLE Updates {#tmle-updates}
 
 There are different types of TMLEs (and, sometimes, multiple for the same set of
-target parameters) -- below, we give an example of the algorithm for TML
+target parameters) --- below, we give an example of the algorithm for TML
 estimation of the ATE.  $\overline{Q}^{\star}_n(A,W)$ is the TMLE-augmented
 estimate $f(\overline{Q}^{\star}_n(A,W)) = f(\overline{Q}_n(A,W)) + \epsilon
 \cdot H_n(A,W)$, where $f(\cdot)$ is the appropriate link function (e.g.,
@@ -190,7 +190,7 @@ Currently, missingness in `tmle3` is handled in a fairly simple way:
 * Missing covariates are median- (for continuous) or mode- (for discrete)
   imputed, and additional covariates indicating imputation are generated, just
   as described in [the `sl3` chapter](#sl3).
-* Missing treatment variables are excluded -- such observations are dropped.
+* Missing treatment variables are excluded --- such observations are dropped.
 * Missing outcomes are efficiently handled by the automatic calculation (and
   incorporation into estimators) of _inverse probability of censoring weights_
   (IPCW); this is also known as IPCW-TMLE and may be thought of as a joint
@@ -534,9 +534,9 @@ print(tmle_fit_multiparam)
 
 Follow the steps below to estimate an average treatment effect using data from
 the Collaborative Perinatal Project (CPP), available in the `sl3` package. To
-simplify this example, we define a binary intervention variable, `parity01` --
+simplify this example, we define a binary intervention variable, `parity01` ---
 an indicator of having one or more children before the current child and a
-binary outcome, `haz01` -- an indicator of having an above average height for
+binary outcome, `haz01` --- an indicator of having an above average height for
 age.
 
 

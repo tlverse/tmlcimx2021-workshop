@@ -170,7 +170,7 @@ Wald-style confidence intervals.</p>
 <span class="header-section-number">6.4.1</span> TMLE Updates<a class="anchor" aria-label="anchor" href="#tmle-updates"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are different types of TMLEs (and, sometimes, multiple for the same set of
-target parameters) – below, we give an example of the algorithm for TML
+target parameters) — below, we give an example of the algorithm for TML
 estimation of the ATE. <span class="math inline">\(\overline{Q}^{\star}_n(A,W)\)</span> is the TMLE-augmented
 estimate <span class="math inline">\(f(\overline{Q}^{\star}_n(A,W)) = f(\overline{Q}_n(A,W)) + \epsilon \cdot H_n(A,W)\)</span>, where <span class="math inline">\(f(\cdot)\)</span> is the appropriate link function (e.g.,
 <span class="math inline">\(\text{logit}(x) = \log\left(\frac{x}{1 - x}\right)\)</span>), and an estimate
@@ -263,7 +263,7 @@ Acyclic Graph (DAG), a way of displaying causal relationships between variables.
 <li>Missing covariates are median- (for continuous) or mode- (for discrete)
 imputed, and additional covariates indicating imputation are generated, just
 as described in <a href="sl3.html#sl3">the <code>sl3</code> chapter</a>.</li>
-<li>Missing treatment variables are excluded – such observations are dropped.</li>
+<li>Missing treatment variables are excluded — such observations are dropped.</li>
 <li>Missing outcomes are efficiently handled by the automatic calculation (and
 incorporation into estimators) of <em>inverse probability of censoring weights</em>
 (IPCW); this is also known as IPCW-TMLE and may be thought of as a joint
@@ -582,9 +582,9 @@ above defined ATE parameter</p>
 </h3>
 <p>Follow the steps below to estimate an average treatment effect using data from
 the Collaborative Perinatal Project (CPP), available in the <code>sl3</code> package. To
-simplify this example, we define a binary intervention variable, <code>parity01</code> –
+simplify this example, we define a binary intervention variable, <code>parity01</code> —
 an indicator of having one or more children before the current child and a
-binary outcome, <code>haz01</code> – an indicator of having an above average height for
+binary outcome, <code>haz01</code> — an indicator of having an above average height for
 age.</p>
 <div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load the data set</span>

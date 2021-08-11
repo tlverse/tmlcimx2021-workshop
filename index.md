@@ -386,7 +386,7 @@ following packages:
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.17    |Github (rstudio/bookdown\@928468e) |
+|bookdown   |0.22.17    |Github (rstudio/bookdown\@1fdde0f) |
 |bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
 |daggity    |NA         |NA                                 |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |

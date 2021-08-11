@@ -35,7 +35,7 @@ These are the main packages that represent the **core** of the `tlverse`:
     engine even as new techniques are developed.
 
 In addition to the engines that drive development in the `tlverse`, there are
-some supporting packages -- in particular, we have two...
+some supporting packages --- in particular, we have two...
 
 * [`origami`](https://github.com/tlverse/origami): A Generalized Framework for
    Cross-Validation
