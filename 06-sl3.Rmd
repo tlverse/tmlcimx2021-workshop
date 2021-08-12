@@ -70,8 +70,8 @@ this roadmap define the *statistical estimation problem*, which establish
 3. **A translation of the scientific question of interest into a function of** 
    **$P_0$, the target statistical estimand $\Psi(P_0)$.** For example, we might 
    be interested in the average difference in mean outcomes under treatment 
-   $A=1$ versus placebo $A=0$ --- 
-   $\Psi(P_0)=E_{P_0}\Big[E_{P_0}(Y|A=1,W)−E_{P_0}(Y|A=0,W)\Big]$. Note 
+   $A=1$ versus placebo $A=0$, which corresponds to the target statistical 
+   estimand $\Psi(P_0)=E_{P_0}\Big[E_{P_0}(Y|A=1,W)−E_{P_0}(Y|A=0,W)\Big]$. Note 
    that, if the scientific question is causal, then it's translation will 
    produce a target *causal* estimand; another layer of translation, 
    identifiability, is required to express the target causal estimand as a 
