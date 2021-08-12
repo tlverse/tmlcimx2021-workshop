@@ -5,7 +5,7 @@ subtitle: "A Short Course for the Public Health and Epidemiology Program (PASPE)
  at the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: August 11, 2021"
+date: "updated: August 12, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -386,7 +386,7 @@ following packages:
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.17    |Github (rstudio/bookdown\@1fdde0f) |
+|bookdown   |0.22.17    |Github (rstudio/bookdown\@3a13546) |
 |bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
 |daggity    |NA         |NA                                 |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |
