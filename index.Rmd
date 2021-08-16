@@ -116,12 +116,12 @@ After completing this short course, students will be able to:
 ### 16 August 2021 --- The Roadmap {-}
 
 * **Before class:** Please read the article ["Why We Need A Statistical 
-  Revolution"](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/) 
-  and watch the video lecture by Professors Mark van der Laan and Alan Hubbard 
-  ["Introduction to Targeted Learning" (60 
-  min)](https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0).
-* **During class:** [The Roadmap for Targeted 
-  Learning](https://tlverse.org/tmlcimx2021-workshop/intro.html) and 
+  Revolution"](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/).
+* **During class:** Lecture by Berkeley Professors Mark van der Laan and Alan 
+  Hubbard (slide deck 
+  [here](https://github.com/tlverse/tmlcimx2021-workshop/tree/master/slides/TLoverview.pdf)), 
+  [The Roadmap for Targeted 
+  Learning](https://tlverse.org/tmlcimx2021-workshop/intro.html), and 
   [Introduction to the 
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
 * **After class:** Please complete the [Roadmap Chapter 
