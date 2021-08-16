@@ -5,7 +5,7 @@ subtitle: "A Short Course for the Public Health and Epidemiology Program (PASPE)
  at the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: August 12, 2021"
+date: "updated: August 16, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
@@ -116,12 +116,12 @@ After completing this short course, students will be able to:
 ### 16 August 2021 --- The Roadmap {-}
 
 * **Before class:** Please read the article ["Why We Need A Statistical 
-  Revolution"](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/) 
-  and watch the video lecture by Professors Mark van der Laan and Alan Hubbard 
-  ["Introduction to Targeted Learning" (60 
-  min)](https://www.dropbox.com/s/7b6ru2ahycqq80v/ENAR2021-lecture.mp4?dl=0).
-* **During class:** [The Roadmap for Targeted 
-  Learning](https://tlverse.org/tmlcimx2021-workshop/intro.html) and 
+  Revolution"](https://senseaboutscienceusa.org/super-learning-and-the-revolution-in-knowledge/).
+* **During class:** Lecture by Berkeley Professors Mark van der Laan and Alan 
+  Hubbard (slide deck 
+  [here](https://github.com/tlverse/tmlcimx2021-workshop/tree/master/slides/TLoverview.pdf)), 
+  [The Roadmap for Targeted 
+  Learning](https://tlverse.org/tmlcimx2021-workshop/intro.html), and 
   [Introduction to the 
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
 * **After class:** Please complete the [Roadmap Chapter 
@@ -386,7 +386,7 @@ following packages:
 
 |package    |version    |source                             |
 |:----------|:----------|:----------------------------------|
-|bookdown   |0.22.17    |Github (rstudio/bookdown\@3a13546) |
+|bookdown   |0.23.1     |Github (rstudio/bookdown\@01fae11) |
 |bslib      |0.2.5.9002 |Github (rstudio/bslib\@78960cb)    |
 |daggity    |NA         |NA                                 |
 |data.table |1.14.0     |CRAN (R 4.1.0)                     |

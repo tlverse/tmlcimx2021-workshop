@@ -9,28 +9,74 @@ solutions to some of these questions.
 Potential solutions to the [Roadmap Exercises](#roadmap-exercises) are listed 
 below.
 
-2. What is the objective of the roadmap?
-3. Specifying a statistical estimation problem consists of what three steps?
+2. What is the objective of the roadmap? 
+
+Organize and obtain a statistical analysis plan grounded in theory and optimized 
+practical performance.
+
+3. Specifying a statistical estimation problem consists of what three steps? 
+
+Data; Statistical model; Target Parameter Mapping
+
 4. Provide a definition and an example for each of the following:
 
-    a. Statistical model 
+    a. Statistical model
+    
+Assuming that the $n$ observations are independent and identically distributed 
+with a common unspecified data distribution.
+
     b. Target estimand
+    
+Observe $n$ copies of $O=(W,A,Y)$, estimand 
+$Psi(P_0)={E_{P_0}E_{P_0}(Y|A=1,W)-E_{P_0}(Y|A=0,W)}$
+
     c. Estimator
     
-7. Provide examples of data under the following scenarios:
+TMLE
+
+5. Provide examples of data under the following scenarios:
 
     a. The observations are not independent, but are identically distributed.
+
+Draw observation from $P_0$; set next observation equal to that observation; 
+redraw an observation from $P_0$ and set net observation equal to that one; etc. 
+All have distribution $P_0$ but the even ones are copies of previous. 
+
     b. The observations are neither independent nor identically distributed. 
 
-8. Traditional data analysis concerns  
+Sequential adaptive design in which we sample subjects from population, measure 
+covariates $W$, assign a treatment $A$ based on an estimator of conditional 
+distribution of $A$, given $W$, learned from data collected on previously 
+enrolled subjects, and measure outcome at some later time-point. 
+
+6. Traditional data analysis concerns  
  
     a. Common data science practice encourages users to "check" models after 
        they have been fit to the data so that if one of the checks fail, then a 
        new model can be fit to the data. Why can this approach be problematic?
+       
+Hard to understand and estimate the sampling distribution of the complete 
+sequential procedure, and generally lacks theory to even allow on to establish 
+a consistent estimator of the sampling distribution. It also does not take into 
+account that testing for validity of model allows for acceptance of the null 
+hypothesis (that model is correct) with high probability, since type I error 
+control does not worry about the probability on type II error. Therefore, these 
+tests will allow for bias to creep in at the size of the standard error or 
+larger thereby affecting coverage. Either way, at minimal one needs complete 
+specification of the full procedure so that one can carry out simulations 
+establishing how bad it is and run a bootstrap to  aim to understand the 
+sampling distribution. By then, one will realize how bad it is.
+
     b. Common data science practice lets the type of data at hand dictate the 
        scientific question of interest and the statistical model. Why is this 
        problematic?
+       
+Data has nothing to  do with question of interest and what is known about the 
+data generating experiment. A scientific method needs to separate what do we 
+observe; what do we know about the data generating experiment; and what are we 
+trying to learn. 
 -->
+
 ## Cross-validation {#solutions-cv}
 
 
