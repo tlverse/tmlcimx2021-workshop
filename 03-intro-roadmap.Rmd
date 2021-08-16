@@ -425,12 +425,12 @@ of $P_0$. We discuss several more complex estimands in later sections.
     b. Target estimand
     c. Estimator
     
-7. Provide examples of data under the following scenarios:
+5. Provide examples of data under the following scenarios:
 
     a. The observations are not independent, but are identically distributed.
     b. The observations are neither independent nor identically distributed. 
 
-8. Traditional data analysis concerns  
+6. Traditional data analysis concerns  
  
     a. Common data science practice encourages users to "check" models after 
        they have been fit to the data so that if one of the checks fail, then a 
