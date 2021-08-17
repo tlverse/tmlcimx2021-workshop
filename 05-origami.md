@@ -1678,21 +1678,9 @@ each CV scheme compare to the risk in Question 1?
    cross-validation scheme should be used for a rare outcome? How can we do this
    with the `origami` package?
 
-2. Consider the WASH benefits dataset presented in this chapter. How can we
-   include cluster information into cross-validation? How can we do this with
-   the `origami` package?
-
 ### Advanced topics
 
-1. Think about a dataset with arbitrary spatial dependence, where we know
-   the extent of dependence, and groups formed by such dependence are clear
-   with no spillover effects. What kind of cross-validation can we use?
-
-2. Continuing on the last problem, what kind of procedure, and cross-validation
-   method, can we use if the spatial dependence is not clearly defined as in the
-   previous problem?
-
-3. Consider a classification problem with a large number of predictors. A
+1. Consider a classification problem with a large number of predictors. A
    statistician proposes the following analysis:
 
    a. First screen the predictors, leaving only covariates with a strong
