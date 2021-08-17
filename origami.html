@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 4 Cross-validation | Targeted Machine Learning with Big Data in the tlverse</title>
 <meta name="author" content="Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips">
-<meta name="description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-16 Learning Objectives By the end of this chapter you will be able...">
+<meta name="description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-17 Learning Objectives By the end of this chapter you will be able...">
 <meta name="generator" content="bookdown 0.23.1 with bs4_book()">
 <meta property="og:title" content="Chapter 4 Cross-validation | Targeted Machine Learning with Big Data in the tlverse">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://tlverse.org/tmlcimx2021-workshop/origami.html">
-<meta property="og:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-16 Learning Objectives By the end of this chapter you will be able...">
+<meta property="og:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-17 Learning Objectives By the end of this chapter you will be able...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 4 Cross-validation | Targeted Machine Learning with Big Data in the tlverse">
-<meta name="twitter:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-16 Learning Objectives By the end of this chapter you will be able...">
+<meta name="twitter:description" content="Ivana Malenica Based on the origami R package by Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips. Updated: 2021-08-17 Learning Objectives By the end of this chapter you will be able...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.9002/transition.js"></script><script src="libs/bs3compat-0.2.5.9002/tabs.js"></script><script src="libs/bs3compat-0.2.5.9002/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -80,7 +80,7 @@
 <p><em>Ivana Malenica</em></p>
 <p>Based on the <a href="https://github.com/tlverse/origami"><code>origami</code> <code>R</code> package</a>
 by <em>Jeremy Coyle, Nima Hejazi, Ivana Malenica and Rachael Phillips</em>.</p>
-<p>Updated: 2021-08-16</p>
+<p>Updated: 2021-08-17</p>
 <div id="learning-objectives-1" class="section level2 unnumbered">
 <h2>Learning Objectives<a class="anchor" aria-label="anchor" href="#learning-objectives-1"><i class="fas fa-link"></i></a>
 </h2>
@@ -2277,62 +2277,9 @@ performs 10-fold cross-validation):</p>
 estimate of the model error (by resubstitution) was a bit optimistic. The honest
 estimate of the error is larger!</p>
 </div>
-<div id="cross-validation-with-random-forests" class="section level3">
-<h3>
-<span class="header-section-number">4.7.2</span> Cross-validation with random forests<a class="anchor" aria-label="anchor" href="#cross-validation-with-random-forests"><i class="fas fa-link"></i></a>
-</h3>
-<p>To examine <code>origami</code> further, let us return to our example analysis using the
-WASH data set. Here, we will write a new <code>cv_fun</code> type object. As an example, we
-will use Breiman’s <code>randomForest</code> <span class="citation">(Breiman <a href="references.html#ref-breiman2001random" role="doc-biblioref">2001</a>)</span>:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># make sure to load the package!</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.stat.berkeley.edu/~breiman/RandomForests/">randomForest</a></span><span class="op">)</span>
-
-<span class="va">cv_rf</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">fold</span>, <span class="va">data</span>, <span class="va">reg_form</span><span class="op">)</span> <span class="op">{</span>
-  <span class="co"># get name and index of outcome variable from regression formula</span>
-  <span class="va">out_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">reg_form</span>, <span class="st">" "</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>
-  <span class="va">out_var_ind</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">==</span> <span class="va">out_var</span><span class="op">)</span><span class="op">)</span>
-
-  <span class="co"># define training and validation sets based on input object of class "folds"</span>
-  <span class="va">train_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_helpers.html">training</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
-  <span class="va">valid_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/fold_helpers.html">validation</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
-
-  <span class="co"># fit Random Forest regression on training set and predict on holdout set</span>
-  <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/randomForest/man/randomForest.html">randomForest</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/formula.html">as.formula</a></span><span class="op">(</span><span class="va">reg_form</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">train_data</span><span class="op">)</span>
-  <span class="va">preds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="va">valid_data</span><span class="op">)</span>
-  <span class="va">valid_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">valid_data</span><span class="op">)</span>
-
-  <span class="co"># define output object to be returned as list (for flexibility)</span>
-  <span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-    coef <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mod</span><span class="op">$</span><span class="va">coefs</span><span class="op">)</span>,
-    SE <span class="op">=</span> <span class="op">(</span><span class="op">(</span><span class="va">preds</span> <span class="op">-</span> <span class="va">valid_data</span><span class="op">[</span>, <span class="va">out_var_ind</span><span class="op">]</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span>
-  <span class="op">)</span>
-  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span>
-<span class="op">}</span></code></pre></div>
-<p>Above, in writing our <code>cv_rf</code> function to cross-validate <code>randomForest</code>, we used
-our previous function <code>cv_lm</code> as an example. For now, individual <code>cv_fun</code> must
-be written by hand; however, in future releases, a wrapper may be available to
-support auto-generating <code>cv_fun</code>s to be used with <code>origami</code>.</p>
-<p>Below, we use <code>cross_validate</code> to apply our new <code>cv_rf</code> function over the <code>folds</code>
-object generated by <code>make_folds</code>.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># now, let's cross-validate...</span>
-<span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/make_folds.html">make_folds</a></span><span class="op">(</span><span class="va">washb_data</span><span class="op">)</span>
-<span class="va">cvrf_results</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/cross_validate.html">cross_validate</a></span><span class="op">(</span>
-  cv_fun <span class="op">=</span> <span class="va">cv_rf</span>, folds <span class="op">=</span> <span class="va">folds</span>,
-  data <span class="op">=</span> <span class="va">washb_data</span>, reg_form <span class="op">=</span> <span class="st">"whz ~ ."</span>,
-  use_future <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">cvrf_results</span><span class="op">$</span><span class="va">SE</span><span class="op">)</span>
-<span class="co">#&gt; [1] 1.0271</span></code></pre></div>
-<p>Using 10-fold cross-validation (the default), we obtain an honest estimate of
-the prediction error of random forests. From this, we gather that the use of
-<code>origami</code>’s <code>cross_validate</code> procedure can be generalized to arbitrary estimation
-techniques, given availability of an appropriate <code>cv_fun</code> function.</p>
-</div>
 <div id="cross-validation-with-arima" class="section level3">
 <h3>
-<span class="header-section-number">4.7.3</span> Cross-validation with ARIMA<a class="anchor" aria-label="anchor" href="#cross-validation-with-arima"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.2</span> Cross-validation with ARIMA<a class="anchor" aria-label="anchor" href="#cross-validation-with-arima"><i class="fas fa-link"></i></a>
 </h3>
 <p>Cross-validation can also be used for forecast model selection in a time series
 setting. Here, the partitioning scheme mirrors the application of the
@@ -2341,7 +2288,7 @@ available or a recent subset), and then use the ARIMA (AutoRegressive
 Integrated Moving Average) model fit to predict the next few observations. We
 consider the <code>AirPassengers</code> dataset again, a monthly time series of passenger
 air traffic in thousands of people.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">AirPassengers</span><span class="op">)</span>
 <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/print.html">print</a></span><span class="op">(</span><span class="va">AirPassengers</span><span class="op">)</span>
 <span class="co">#&gt;      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span>
@@ -2360,7 +2307,7 @@ air traffic in thousands of people.</p>
 <p>Suppose we want to pick between two forecasting models with different <code>arima</code>
 configurations. We can do that by evaluating their forecasting performance.
 First, we set up the appropriate cross-validation scheme for time-series.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://tlverse.org/origami/reference/make_folds.html">make_folds</a></span><span class="op">(</span><span class="va">AirPassengers</span>,
   fold_fun <span class="op">=</span> <span class="va">folds_rolling_origin</span>,
   first_window <span class="op">=</span> <span class="fl">36</span>, validation_size <span class="op">=</span> <span class="fl">24</span>, batch <span class="op">=</span> <span class="fl">10</span>
@@ -2403,7 +2350,7 @@ folds to train! Luckily, we can pass the <code>batch</code> as option to
 <code>folds_rolling_origin</code> that tells it to increase the size of the training set by
 10 points each iteration. Since we want to forecast the immediate next point,
 <code>gap</code> argument remains the default (0).</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># make sure to load the package!</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://pkg.robjhyndman.com/forecast/">forecast</a></span><span class="op">)</span>
 
@@ -2470,9 +2417,55 @@ folds to train! Luckily, we can pass the <code>batch</code> as option to
 <h2>
 <span class="header-section-number">4.8</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
 </h2>
+<div id="real-world-data-and-origami" class="section level3">
+<h3>
+<span class="header-section-number">4.8.1</span> Real World Data and <code>origami</code><a class="anchor" aria-label="anchor" href="#real-world-data-and-origami"><i class="fas fa-link"></i></a>
+</h3>
+<p>In this section, we review all the concepts learned via a real world data
+application.</p>
+<p>We will be using the WASH Benefits data, corresponding to the effect of water quality,
+sanitation, hand washing, and nutritional interventions on child development in rural
+Bangladesh trial. The main aim of the WASH Benefits cluster-randomized controlled trial was
+to assess the impact of six intervention groups. In this problem set, we aim to estimate the
+conditional mean of the weight-for-height Z-score given treatment and all baseline covarites;
+we goal is also to report the performance of the Random Forest algorithm fit <span class="citation">(Breiman <a href="references.html#ref-breiman2001random" role="doc-biblioref">2001</a>)</span>.
+We review the list of used covariates below:</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">outcome</span> 
+<span class="co">#&gt; [1] "whz"</span>
+<span class="va">covars</span> 
+<span class="co">#&gt;  [1] "tr"             "fracode"        "month"          "aged"          </span>
+<span class="co">#&gt;  [5] "sex"            "momage"         "momedu"         "momheight"     </span>
+<span class="co">#&gt;  [9] "hfiacat"        "Nlt18"          "Ncomp"          "watmin"        </span>
+<span class="co">#&gt; [13] "elec"           "floor"          "walls"          "roof"          </span>
+<span class="co">#&gt; [17] "asset_wardrobe" "asset_table"    "asset_chair"    "asset_khat"    </span>
+<span class="co">#&gt; [21] "asset_chouki"   "asset_tv"       "asset_refrig"   "asset_bike"    </span>
+<span class="co">#&gt; [25] "asset_moto"     "asset_sewmach"  "asset_mobile"</span></code></pre></div>
+<p>Questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>Using Breiman’s <code>randomForest</code> package, predict the weight-for-height Z-score
+(<code>whz</code>) based on a subset of data (n=500) using all of the available covariates.
+Which loss function is appropriate for this statistical problem? Report the error of
+the model using all the available data to fit and evaluate the model.</p></li>
+<li><p>Write a function to obtain the random forest fit on a specific partition of the data
+that aligns with <code>cv_fun</code> argument to <code>cross_validate</code> in the <code>origami</code> package. The
+function should return the appropriate loss per fold.</p></li>
+<li><p>Using the <code>make_folds</code> function in <code>origami</code> package, define:</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>V-fold CV scheme with <code>V = 5</code>,</li>
+<li>Monte-carlo CV scheme with <code>V = 5</code> and <code>pvalidation = 0.2</code>,</li>
+<li>Re-substitution scheme.</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>Report the risk (mean loss) and variance of the loss per fold for each of the
+CV schemes set in the previous question. How does the estimated risk corresponding to
+each CV scheme compare to the risk in Question 1?</li>
+</ol>
+</div>
 <div id="review-of-key-concepts" class="section level3">
 <h3>
-<span class="header-section-number">4.8.1</span> Review of key concepts<a class="anchor" aria-label="anchor" href="#review-of-key-concepts"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.2</span> Review of key concepts<a class="anchor" aria-label="anchor" href="#review-of-key-concepts"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Compare and contrast V-fold cross-validation with resubstitution
@@ -2492,7 +2485,7 @@ other.</p></li>
 </div>
 <div id="ideas-in-action" class="section level3">
 <h3>
-<span class="header-section-number">4.8.2</span> Ideas in action<a class="anchor" aria-label="anchor" href="#ideas-in-action"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.3</span> Ideas in action<a class="anchor" aria-label="anchor" href="#ideas-in-action"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(Y\)</span> be a binary variable with <span class="math inline">\(P(Y=1 \mid W) = 0.01\)</span>. What kind of
@@ -2505,7 +2498,7 @@ the <code>origami</code> package?</p></li>
 </div>
 <div id="advanced-topics" class="section level3">
 <h3>
-<span class="header-section-number">4.8.3</span> Advanced topics<a class="anchor" aria-label="anchor" href="#advanced-topics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.4</span> Advanced topics<a class="anchor" aria-label="anchor" href="#advanced-topics"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Think about a dataset with arbitrary spatial dependence, where we know
@@ -2567,15 +2560,15 @@ of the proposed algorithm.</li>
 <li>
 <a class="nav-link" href="#cross-validation-in-action"><span class="header-section-number">4.7</span> Cross-validation in action</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#cross-validation-with-linear-regression"><span class="header-section-number">4.7.1</span> Cross-validation with linear regression</a></li>
-<li><a class="nav-link" href="#cross-validation-with-random-forests"><span class="header-section-number">4.7.2</span> Cross-validation with random forests</a></li>
-<li><a class="nav-link" href="#cross-validation-with-arima"><span class="header-section-number">4.7.3</span> Cross-validation with ARIMA</a></li>
+<li><a class="nav-link" href="#cross-validation-with-arima"><span class="header-section-number">4.7.2</span> Cross-validation with ARIMA</a></li>
 </ul>
 </li>
 <li>
 <a class="nav-link" href="#exercises"><span class="header-section-number">4.8</span> Exercises</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#review-of-key-concepts"><span class="header-section-number">4.8.1</span> Review of key concepts</a></li>
-<li><a class="nav-link" href="#ideas-in-action"><span class="header-section-number">4.8.2</span> Ideas in action</a></li>
-<li><a class="nav-link" href="#advanced-topics"><span class="header-section-number">4.8.3</span> Advanced topics</a></li>
+<li><a class="nav-link" href="#real-world-data-and-origami"><span class="header-section-number">4.8.1</span> Real World Data and origami</a></li>
+<li><a class="nav-link" href="#review-of-key-concepts"><span class="header-section-number">4.8.2</span> Review of key concepts</a></li>
+<li><a class="nav-link" href="#ideas-in-action"><span class="header-section-number">4.8.3</span> Ideas in action</a></li>
+<li><a class="nav-link" href="#advanced-topics"><span class="header-section-number">4.8.4</span> Advanced topics</a></li>
 </ul>
 </li>
 </ul>
@@ -2595,7 +2588,7 @@ of the proposed algorithm.</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 16, 2021.</p>
+    <p>"<strong>Targeted Machine Learning with Big Data in the <code>tlverse</code></strong>: A Short Course for the Public Health and Epidemiology Program (PASPE) at the National Institute of Public Health in Mexico" was written by Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana Malenica, Rachael Phillips. It was last built on updated: August 17, 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

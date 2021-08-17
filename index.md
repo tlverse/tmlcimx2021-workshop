@@ -5,7 +5,7 @@ subtitle: "A Short Course for the Public Health and Epidemiology Program (PASPE)
  at the National Institute of Public Health in Mexico"
 author: "Mark van der Laan, Alan Hubbard, Jeremy Coyle, Nima Hejazi, Ivana
   Malenica, Rachael Phillips"
-date: "updated: August 16, 2021"
+date: "updated: August 17, 2021"
 documentclass: book
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]

@@ -42,9 +42,9 @@ rolling-window-with-v-fold
 general-workflow-of-origami
 cross-validation-in-action
 cross-validation-with-linear-regression
-cross-validation-with-random-forests
 cross-validation-with-arima
 exercises
+real-world-data-and-origami
 review-of-key-concepts
 ideas-in-action
 advanced-topics
