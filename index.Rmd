@@ -126,7 +126,7 @@ After completing this short course, students will be able to:
   `tlverse`](https://tlverse.org/tmlcimx2021-workshop/tlverse.html).
 * **After class:** Please complete the [Roadmap Chapter 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/intro.html#exercises) in 
-  a text editor (such as Microsoft Word) and *by midnight on 16 August*, send
+  a text editor (such as Microsoft Word) and ***by 22 August***, send
   your solutions file to Slack by attaching it to a direct message (DM) with an
   instructor (Jeremy Coyle, Nima Hejazi, Ivana Malenica, or Rachael Phillips).
   For guidance on attaching files to Slack DMs, see the ["Add files to Slack" 
@@ -141,7 +141,7 @@ After completing this short course, students will be able to:
   `origami`](https://tlverse.org/tmlcimx2021-workshop/origami.html).
 * **After class:** Please complete the [Cross-validation 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/origami.html#exercises)
-  and *by midnight on 17 August*, send your solutions file to Slack by attaching 
+  and ***by 22 August***, send your solutions file to Slack by attaching 
   it to a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, 
   Ivana Malenica, or Rachael Phillips). For guidance on attaching files to 
   Slack DMs, see the ["Add files to Slack" help 
@@ -156,7 +156,7 @@ After completing this short course, students will be able to:
   `sl3`](https://tlverse.org/tmlcimx2021-workshop/sl3.html) and 
 * **After class:** Please complete the [Super Learning 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/sl3.html#sl3-exercises) 
-  and *by midnight on 18 August*, send your solutions file to Slack by attaching 
+  and ***by 22 August***, send your solutions file to Slack by attaching 
   it to a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, 
   Ivana Malenica, or Rachael Phillips). For guidance on attaching files to 
   Slack DMs, see the ["Add files to Slack" help 
@@ -170,7 +170,7 @@ After completing this short course, students will be able to:
   Framework](https://tlverse.org/tmlcimx2021-workshop/tmle3.html)
 * **After class:** Please complete the [TMLE 
   Exercises](https://tlverse.org/tmlcimx2021-workshop/tmle3.html#exercises-1) 
-  and *by midnight on 19 August*, send your solutions file to Slack by attaching 
+  and ***by 22 August***, send your solutions file to Slack by attaching 
   it to a direct message (DM) with an instructor (Jeremy Coyle, Nima Hejazi, 
   Ivana Malenica, or Rachael Phillips). For guidance on attaching files to 
   Slack DMs, see the ["Add files to Slack" help 
